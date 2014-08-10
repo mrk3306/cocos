@@ -4,7 +4,6 @@
 #include "cocos2d.h"
 #include "Config.h"
 #include "Enemy.h"
-#include "Enemy02.h"
 
 USING_NS_CC;
 
