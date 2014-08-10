@@ -40,8 +40,8 @@ Example:
     $ cd cocos2d-x
     $ ./setup.py
     $ source FILE_TO_SAVE_SYSTEM_VARIABLE
-    $ cocos new MyGame -p com.your_company.mygame -l cpp -d NEW_PROJECTS_DIR
-    $ cd NEW_PROJECTS_DIR/MyGame
+    $ cocos new HelloWorldApp -p com.your_company.HelloWorldApp -l cpp -d NEW_PROJECTS_DIR
+    $ cd NEW_PROJECTS_DIR/HelloWorldApp
 
 ### Build and run new project for android ###
 
@@ -65,12 +65,12 @@ script in **cocos2d/build/install-deps-linux.sh**
 
 Then
 
-    $ cd NEW_PROJECTS_DIR/MyGame
+    $ cd NEW_PROJECTS_DIR/HelloWorldApp
     $ cocos run -p linux
     
 Run
 
-    $ bin/MyGame
+    $ bin/HelloWorldApp
 
 ### Build and run new project for win32 ###
 

@@ -1,18 +1,18 @@
-#ifndef __shooting2__GameScene__
-#define __shooting2__GameScene__
+#ifndef __HelloWorldApp__GameScene__
+#define __HelloWorldApp__GameScene__
 
 #include "cocos2d.h"
 #include "Config.h"
-//#include "SimpleAudioEngine.h"
-//#include "Manager/ResourceManager.h"
-//#include "Manager/RewardManager.h"
-//#include "Sprite/OperationPanel/OperationPanelClassLoader.h"
-//#include "Sprite/Player/PlayerClassLoader.h"
-//#include "Sprite/Player/WarShip.h"
-//#include "Sprite/Enemy/EnemyClassLoader.h"
-//#include "Sprite/Ally/AllyClassLoader.h"
-//#include "Sprite/OperationPanel/LifeLeft.h"
-//#include "Sprite/OperationPanel/LifeRight.h"
+#include "SimpleAudioEngine.h"
+#include "Manager/ResourceManager.h"
+#include "Manager/RewardManager.h"
+#include "Sprite/OperationPanel/OperationPanelClassLoader.h"
+#include "Sprite/Player/PlayerClassLoader.h"
+#include "Sprite/Player/WarShip.h"
+#include "Sprite/Enemy/EnemyClassLoader.h"
+#include "Sprite/Ally/AllyClassLoader.h"
+#include "Sprite/OperationPanel/LifeLeft.h"
+#include "Sprite/OperationPanel/LifeRight.h"
 
 using namespace std;
 USING_NS_CC;
@@ -47,4 +47,4 @@ private:
     void endFeverTime(float dt);
     
 };
-#endif /* defined(__shooting2__GameScene__) */
+#endif /* defined(__HelloWorldApp__GameScene__) */

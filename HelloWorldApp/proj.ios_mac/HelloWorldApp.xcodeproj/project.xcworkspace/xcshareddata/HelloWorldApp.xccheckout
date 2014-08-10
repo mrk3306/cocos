@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D21B0138-2FB6-4EA6-A3CC-C93F2032B4B0</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HelloWorldApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>71A59612-62E6-4D18-9B39-E999718E6C81</key>
+		<string>https://github.com/mrk3306/cocos.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HelloWorldApp/proj.ios_mac/HelloWorldApp.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>71A59612-62E6-4D18-9B39-E999718E6C81</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/mrk3306/cocos.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>71A59612-62E6-4D18-9B39-E999718E6C81</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>71A59612-62E6-4D18-9B39-E999718E6C81</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cocos</string>
+		</dict>
+	</array>
+</dict>
+</plist>
