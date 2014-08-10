@@ -290,9 +290,9 @@ void GameScene::createEnemy()
             
             //ライフ
 //            float enemy_width = winSize.width*(rand()%100+1)/100;
-//            if (enemy_width > winSize.height * 0.4)
+//            if (enemy_width > winSize.height * 0.8)
 //            {
-//                enemy_width = winSize.height * 0.4;
+//                enemy_width = winSize.height * 0.8;
 //            }
 //            
 //            auto enemy08 = Enemy08::createEnemy(warShip);
@@ -381,7 +381,7 @@ void GameScene::collisionDetection()
                     {
                         
                         
-                        //if(player->playerStatus() == true){
+                        if(player->playerStatus() == true){
                         
                         
                         auto reward_manager = RewardManager::getInstance();
@@ -407,7 +407,7 @@ void GameScene::collisionDetection()
                         player->hurt(enemy->getPower(), enemy->getSpecialEffect());
                         enemy->destroy();
                         
-                        // }
+                        }
                         
                         
                     }
@@ -415,6 +415,36 @@ void GameScene::collisionDetection()
             }
         }
         
+        // ライフとあったった場合
+        if (currentNode && currentNode->getTag() == kTagLife)
+        {
+            auto enemy = dynamic_cast<Enemy*>(currentNode);
+            for (auto targetNode : children)
+            {
+                
+                
+                if (targetNode && targetNode->getTag() == kTagPlayer)
+                {
+                    
+                    auto player = dynamic_cast<Player*>(targetNode);
+                    if (currentNode->boundingBox().intersectsRect(targetNode->boundingBox()))
+                    {
+                        
+                        
+                        if(player->playerStatus() == true){
+                            
+                            
+                            
+                            //player->hurt(enemy->getPower(), enemy->getSpecialEffect());
+                            ///enemy->destroy();
+                            
+                        }
+                        
+                        
+                    }
+                }
+            }
+        }
         
         // スターとあたった場合
         if (currentNode && currentNode->getTag() == kTagStar)
@@ -435,40 +465,7 @@ void GameScene::collisionDetection()
                 }
             }
         }
-        
-        
-        
-        // ライフとあったった場合
-        if (currentNode && currentNode->getTag() == kTagLife)
-        {
-            auto enemy = dynamic_cast<Enemy*>(currentNode);
-            for (auto targetNode : children)
-            {
-                
-                
-                if (targetNode && targetNode->getTag() == kTagPlayer)
-                {
-                    
-                    if (currentNode->boundingBox().intersectsRect(targetNode->boundingBox()))
-                    {
-                        
-                        auto player = dynamic_cast<Player*>(targetNode);
-                        // if(player->playerStatus() == true){
-                        
-                        
-                        //auto reward_manager = RewardManager::getInstance();
-                        //reward_manager->setTime(reward_manager->getLife()+1);
-                        
-                        //}
-                        
-                        //player->hurt(enemy->getPower(), enemy->getSpecialEffect());
-                        //enemy->destroy();
-                    }
-                }
-            }
-        }
-        
-        
+    
         
     }
 }

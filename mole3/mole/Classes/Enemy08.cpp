@@ -43,9 +43,5 @@ void Enemy08::specialAttack(Point from, Point to)
 
 void Enemy08::destroy()
 {
-    //auto cuptured_enemy = Enemy02::createEnemy(getTarget());
-    //cuptured_enemy->setPosition(getPositionX(), getPositionY());
-    //getParent()->addChild(cuptured_enemy);
-
     Enemy::destroy();
 }

@@ -4,6 +4,7 @@
 #include "cocos2d.h"
 #include "Config.h"
 #include "Enemy.h"
+#include "PlayerClassLoader.h"
 
 USING_NS_CC;
 
