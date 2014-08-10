@@ -312,24 +312,19 @@ void GameScene::createEnemy()
         }
         else if (rand()%150 == 100)
         {
-            
             //スター
             float enemy_width = winSize.width*(rand()%100+1)/100;
             if (enemy_width > winSize.height * 0.4)
             {
                 enemy_width = winSize.height * 0.4;
             }
-            
+
             auto star = Star::createEnemy(warShip);
             star->setPosition(enemy_width, winSize.height);
             addChild(star, star->getZOrder(), star->getTag());
             star->move();
         }
-        
-        
-        
     }
-    
 }
 
 void GameScene::collisionDetection()
@@ -344,12 +339,9 @@ void GameScene::collisionDetection()
             {
                 
                 if(targetNode->getPositionY() < 0 ){
-                    
                     log("%d",targetNode->getPositionY());
-                    
                 }
-                
-                
+
                 if (targetNode && targetNode->getTag() == kTagAlly)
                 {
                     auto ally = dynamic_cast<Ally*>(targetNode);
@@ -374,20 +366,12 @@ void GameScene::collisionDetection()
                         auto reward_manager = RewardManager::getInstance();
                         reward_manager->setScore(reward_manager->getScore() + 50);
                         
-                        
                         player->hurt(enemy->getPower(), enemy->getSpecialEffect());
                         enemy->destroy();
                         
                         }
-                        
                     }
-                    
                 }
-                
-                
-                
-                
-                
             }
         }
         
