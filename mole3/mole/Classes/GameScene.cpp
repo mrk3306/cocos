@@ -256,16 +256,6 @@ void GameScene::createEnemy()
             addChild(enemy, enemy->getZOrder(), enemy->getTag());
             enemy->move();
         }
-        else if (rand()%150 == 14)
-        {
-            for (int i = 0; i < 4; ++i)
-            {
-                auto enemy = Enemy04::createEnemy(warShip);
-                enemy->setPosition(winSize.width + enemy->getContentSize().width*i, winSize.height);
-                addChild(enemy, enemy->getZOrder(), enemy->getTag());
-                enemy->move();
-            }
-        }
         else if (rand()%150 ==16)
         {
             
