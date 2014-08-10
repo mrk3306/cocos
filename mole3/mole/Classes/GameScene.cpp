@@ -299,16 +299,16 @@ void GameScene::createEnemy()
         {
             
             //ライフ
-            float enemy_width = winSize.width*(rand()%100+1)/100;
-            if (enemy_width > winSize.height * 0.4)
-            {
-                enemy_width = winSize.height * 0.4;
-            }
-            
-            auto enemy08 = Enemy08::createEnemy(warShip);
-            enemy08->setPosition(enemy_width, winSize.height);
-            addChild(enemy08, enemy08->getZOrder(), enemy08->getTag());
-            enemy08->move();
+//            float enemy_width = winSize.width*(rand()%100+1)/100;
+//            if (enemy_width > winSize.height * 0.4)
+//            {
+//                enemy_width = winSize.height * 0.4;
+//            }
+//            
+//            auto enemy08 = Enemy08::createEnemy(warShip);
+//            enemy08->setPosition(enemy_width, winSize.height);
+//            addChild(enemy08, enemy08->getZOrder(), enemy08->getTag());
+//            enemy08->move();
         }
         else if (rand()%150 == 100)
         {

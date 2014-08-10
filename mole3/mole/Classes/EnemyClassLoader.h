@@ -10,6 +10,5 @@
 #include "Enemy06.h"
 #include "Enemy08.h"
 #include "Star.h"
-#include "EnemyNormalBullet.h"
 
 #endif /* defined(__mole__EnemyClassLoader__) */
