@@ -1,0 +1,28 @@
+#ifndef __HelloWorldApp__Enemy05__
+#define __HelloWorldApp__Enemy05__
+
+#include "cocos2d.h"
+#include "Config.h"
+#include "Enemy.h"
+
+USING_NS_CC;
+
+class Enemy05 : public Enemy, public EnemyCreator<Enemy05>
+{
+public:    
+    Enemy05();
+    virtual ~Enemy05();
+
+    virtual void move() override;
+	virtual void attack() override;
+	virtual void attack(Point from, Point to) override;
+	virtual void specialAttack() override;
+	virtual void specialAttack(Point from, Point to) override;
+
+    virtual void destroy() override;
+    
+protected:
+    virtual const char* getImageFileName() override;
+};
+
+#endif /* defined(__HelloWorldApp__Enemy05__) */
