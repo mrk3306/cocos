@@ -137,7 +137,6 @@
 		72CE70E2199752AE0020F76C /* ResourceManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 729059C51997463C00E85837 /* ResourceManager.h */; };
 		72CE70E3199752AE0020F76C /* RewardManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 729059C61997463C00E85837 /* RewardManager.cpp */; };
 		72CE70E4199752AE0020F76C /* RewardManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 729059C71997463C00E85837 /* RewardManager.h */; };
-		72CE70E9199752AE0020F76C /* Config.h in Sources */ = {isa = PBXBuildFile; fileRef = 728B3D4619973395004FDF6E /* Config.h */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -368,9 +367,7 @@
 		724141A31997B67D00354642 /* LifeLeft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LifeLeft.h; path = ../Classes/LifeLeft.h; sourceTree = "<group>"; };
 		724141A41997B67D00354642 /* LifeRight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LifeRight.cpp; path = ../Classes/LifeRight.cpp; sourceTree = "<group>"; };
 		724141A51997B67D00354642 /* LifeRight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LifeRight.h; path = ../Classes/LifeRight.h; sourceTree = "<group>"; };
-		728B3D4619973395004FDF6E /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Config.h; path = ../Classes/Config.h; sourceTree = "<group>"; };
 		728B3D5619973395004FDF6E /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameScene.cpp; path = ../Classes/GameScene.cpp; sourceTree = "<group>"; };
-		728B3D5719973395004FDF6E /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = ../Classes/GameScene.h; sourceTree = "<group>"; };
 		7290596A1997463B00E85837 /* Ally.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ally.cpp; path = ../Classes/Ally.cpp; sourceTree = "<group>"; };
 		7290596B1997463B00E85837 /* Ally.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ally.h; path = ../Classes/Ally.h; sourceTree = "<group>"; };
 		7290596C1997463B00E85837 /* AllyClassLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AllyClassLoader.h; path = ../Classes/AllyClassLoader.h; sourceTree = "<group>"; };
@@ -552,9 +549,7 @@
 				729059C51997463C00E85837 /* ResourceManager.h */,
 				729059C61997463C00E85837 /* RewardManager.cpp */,
 				729059C71997463C00E85837 /* RewardManager.h */,
-				728B3D4619973395004FDF6E /* Config.h */,
 				728B3D5619973395004FDF6E /* GameScene.cpp */,
-				728B3D5719973395004FDF6E /* GameScene.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -988,7 +983,6 @@
 				72CE70E2199752AE0020F76C /* ResourceManager.h in Sources */,
 				72CE70E3199752AE0020F76C /* RewardManager.cpp in Sources */,
 				72CE70E4199752AE0020F76C /* RewardManager.h in Sources */,
-				72CE70E9199752AE0020F76C /* Config.h in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				729059E61997463C00E85837 /* Ignite.cpp in Sources */,
