@@ -140,8 +140,6 @@
 		72CE70C0199752AE0020F76C /* Enemy04.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7290599B1997463C00E85837 /* Enemy04.cpp */; };
 		72CE70C1199752AE0020F76C /* Enemy04.h in Sources */ = {isa = PBXBuildFile; fileRef = 7290599C1997463C00E85837 /* Enemy04.h */; };
 		72CE70C8199752AE0020F76C /* EnemyClassLoader.h in Sources */ = {isa = PBXBuildFile; fileRef = 729059A31997463C00E85837 /* EnemyClassLoader.h */; };
-		72CE70C9199752AE0020F76C /* EnemyNormalBullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 729059A41997463C00E85837 /* EnemyNormalBullet.cpp */; };
-		72CE70CA199752AE0020F76C /* EnemyNormalBullet.h in Sources */ = {isa = PBXBuildFile; fileRef = 729059A51997463C00E85837 /* EnemyNormalBullet.h */; };
 		72CE70CB199752AE0020F76C /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 729059A61997463C00E85837 /* GameScene.cpp */; };
 		72CE70CC199752AE0020F76C /* GameScene.h in Sources */ = {isa = PBXBuildFile; fileRef = 729059A71997463C00E85837 /* GameScene.h */; };
 		72CE70CD199752AE0020F76C /* Ignite.h in Sources */ = {isa = PBXBuildFile; fileRef = 729059A91997463C00E85837 /* Ignite.h */; };
@@ -438,8 +436,6 @@
 		7290599B1997463C00E85837 /* Enemy04.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Enemy04.cpp; path = ../Classes/Enemy04.cpp; sourceTree = "<group>"; };
 		7290599C1997463C00E85837 /* Enemy04.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Enemy04.h; path = ../Classes/Enemy04.h; sourceTree = "<group>"; };
 		729059A31997463C00E85837 /* EnemyClassLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnemyClassLoader.h; path = ../Classes/EnemyClassLoader.h; sourceTree = "<group>"; };
-		729059A41997463C00E85837 /* EnemyNormalBullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EnemyNormalBullet.cpp; path = ../Classes/EnemyNormalBullet.cpp; sourceTree = "<group>"; };
-		729059A51997463C00E85837 /* EnemyNormalBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EnemyNormalBullet.h; path = ../Classes/EnemyNormalBullet.h; sourceTree = "<group>"; };
 		729059A61997463C00E85837 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameScene.cpp; path = ../Classes/GameScene.cpp; sourceTree = "<group>"; };
 		729059A71997463C00E85837 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = ../Classes/GameScene.h; sourceTree = "<group>"; };
 		729059A81997463C00E85837 /* Ignite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ignite.cpp; path = ../Classes/Ignite.cpp; sourceTree = "<group>"; };
@@ -583,8 +579,6 @@
 				7290599B1997463C00E85837 /* Enemy04.cpp */,
 				7290599C1997463C00E85837 /* Enemy04.h */,
 				729059A31997463C00E85837 /* EnemyClassLoader.h */,
-				729059A41997463C00E85837 /* EnemyNormalBullet.cpp */,
-				729059A51997463C00E85837 /* EnemyNormalBullet.h */,
 				729059A61997463C00E85837 /* GameScene.cpp */,
 				729059A71997463C00E85837 /* GameScene.h */,
 				729059A81997463C00E85837 /* Ignite.cpp */,
@@ -1058,8 +1052,6 @@
 				7241418A1997B3A600354642 /* Enemy08.cpp in Sources */,
 				72CE70C1199752AE0020F76C /* Enemy04.h in Sources */,
 				72CE70C8199752AE0020F76C /* EnemyClassLoader.h in Sources */,
-				72CE70C9199752AE0020F76C /* EnemyNormalBullet.cpp in Sources */,
-				72CE70CA199752AE0020F76C /* EnemyNormalBullet.h in Sources */,
 				72CE70CB199752AE0020F76C /* GameScene.cpp in Sources */,
 				72CE70CC199752AE0020F76C /* GameScene.h in Sources */,
 				72CE70CD199752AE0020F76C /* Ignite.h in Sources */,

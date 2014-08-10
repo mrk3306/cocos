@@ -5,7 +5,6 @@
 #include "Config.h"
 #include "Enemy.h"
 #include "Enemy02.h"
-#include "EnemyNormalBullet.h"
 
 USING_NS_CC;
 

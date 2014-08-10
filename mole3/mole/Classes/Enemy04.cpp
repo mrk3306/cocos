@@ -22,13 +22,6 @@ void Enemy04::update(float delta)
 {
     Enemy::update(delta);
     
-    if (getStatus() == Status::Normal && getDuration() <= 0)
-    {
-        if (rand()%300 == 1)
-        {
-            attack();
-        }
-    }
 }
 
 void Enemy04::move()
@@ -59,12 +52,7 @@ void Enemy04::attack()
     auto parent = getParent();
     if (parent)
     {
-        auto bullet = EnemyNormalBullet::createEnemy(getTarget());
-        bullet->setColor(Color3B::RED);
-        bullet->setPosition(getPositionX(), getPositionY());
-        parent->addChild(bullet);
 
-        bullet->move();
     }
 }
 
