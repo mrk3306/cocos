@@ -111,19 +111,32 @@ void GameScene::initialPlacement()
     
     
     // ライフ
-    auto heart01_l = LifeLeft::createOperationPanel(warShip);
-    heart01_l->setPosition(Point(winSize.width * 0.92, winSize.height * 0.85));
-    addChild(heart01_l, kZOrderLabel, kTagLife1);
+    auto heart01 = LifeRight::createOperationPanel(warShip);
+    heart01->setPosition(Point(winSize.width * 0.9, winSize.height * 0.85));
+    addChild(heart01, kZOrderLabel, kTagLife1);
     
-    auto heart01_r = LifeLeft::createOperationPanel(warShip);
-    heart01_r->setPosition(Point(winSize.width * 0.85, winSize.height * 0.85));
-    addChild(heart01_r, kZOrderLabel, kTagLife2);
+    auto heart02 = LifeLeft::createOperationPanel(warShip);
+    heart02->setPosition(Point(winSize.width * 0.83, winSize.height * 0.85));
+    addChild(heart02, kZOrderLabel, kTagLife2);
+
+    auto heart03 = LifeRight::createOperationPanel(warShip);
+    heart03->setPosition(Point(winSize.width * 0.7, winSize.height * 0.85));
+    addChild(heart03, kZOrderLabel, kTagLife3);
+  
+    auto heart04 = LifeLeft::createOperationPanel(warShip);
+    heart04->setPosition(Point(winSize.width * 0.63, winSize.height * 0.85));
+    addChild(heart04, kZOrderLabel, kTagLife4);
+
+    auto heart05 = LifeRight::createOperationPanel(warShip);
+    heart05->setPosition(Point(winSize.width * 0.5, winSize.height * 0.85));
+    addChild(heart05, kZOrderLabel, kTagLife5);
+
+    auto heart06 = LifeLeft::createOperationPanel(warShip);
+    heart06->setPosition(Point(winSize.width * 0.43, winSize.height * 0.85));
+    //addChild(heart06, kZOrderLabel, kTagLife6);
     
-    // ライフ2
-    auto heart02_l = LifeLeft::createOperationPanel(warShip);
-    heart02_l->setPosition(Point(winSize.width * 0.78, winSize.height * 0.85));
-    addChild(heart02_l, kZOrderLabel, kTagLife3);
     
+    //プレイヤー
     createPlayer();
     
     
@@ -229,16 +242,10 @@ void GameScene::createEnemy()
         
         if (rand()%150 == 11)
         {
-            //float enemy_height = winSize.height*(rand()%100+1)/100;
+
             float enemy_width = winSize.width*(rand()%100+1)/100;
-            if (enemy_width < winSize.height * 0.4) {
-                enemy_width = winSize.height * 0.4;
-            } else if (enemy_width > winSize.height * 0.8) {
-                enemy_width = winSize.height * 0.8;
-            }
             
             auto enemy = Enemy01::createEnemy(warShip);
-            //enemy->setPosition(winSize.width, enemy_height);
             enemy->setPosition(enemy_width, winSize.height);
             addChild(enemy, enemy->getZOrder(), enemy->getTag());
             enemy->move();
@@ -270,7 +277,7 @@ void GameScene::createEnemy()
             addChild(enemy6, enemy6->getZOrder(), enemy6->getTag());
             enemy6->move();
         }
-        else if (rand()%150 == 23)
+        else if (rand()%150 == 111)
         {
             // 爆弾
             float enemy_width = winSize.width*(rand()%100+1)/100;
@@ -285,7 +292,7 @@ void GameScene::createEnemy()
             enemy->move();
             
         }
-        else if (rand()%150 == 111)
+        else if (rand()%150 == 133)
         {
             
             //ライフ
@@ -295,12 +302,12 @@ void GameScene::createEnemy()
 //                enemy_width = winSize.height * 0.8;
 //            }
 //            
-//            auto enemy08 = Enemy08::createEnemy(warShip);
-//            enemy08->setPosition(enemy_width, winSize.height);
-//            addChild(enemy08, enemy08->getZOrder(), enemy08->getTag());
-//            enemy08->move();
+//            auto enemy = Enemy08::createEnemy(warShip);
+//            enemy->setPosition(enemy_width, winSize.height);
+//            addChild(enemy, enemy->getZOrder(), enemy->getTag());
+//            enemy->move();
         }
-        else if (rand()%150 == 100)
+        else if (rand()%150 == 99)
         {
             
             //スター
@@ -403,21 +410,25 @@ void GameScene::collisionDetection()
                         auto reward_manager = RewardManager::getInstance();
                         reward_manager->setLife(reward_manager->getLife()-1);
                         auto life = reward_manager->getLife();
-                        Sprite* life1 = (Sprite*)this->getChildByTag(kTagLife1);
-                        Sprite* life2 = (Sprite*)this->getChildByTag(kTagLife2);
-                        Sprite* life3 = (Sprite*)this->getChildByTag(kTagLife3);
-                        
-                        if(life <= 0 ){
+                            
+                        if(life <= 1 ){
+                            Sprite* life1 = (Sprite*)this->getChildByTag(kTagLife1);
                             life1->setVisible(false);
-                            
-                        }else if(life==1){
-                            
+                        }else if(life==2){
+                            Sprite* life2 = (Sprite*)this->getChildByTag(kTagLife2);
                             life2->setVisible(false);
-                            
-                        }else{
-                            
+                        }else if(life==3){
+                            Sprite* life3 = (Sprite*)this->getChildByTag(kTagLife3);
                             life3->setVisible(false);
-                            
+                        }else if(life==4){
+                            Sprite* life4 = (Sprite*)this->getChildByTag(kTagLife4);
+                            life4->setVisible(false);
+                        }else if(life==5){
+                            Sprite* life5 = (Sprite*)this->getChildByTag(kTagLife5);
+                            life5->setVisible(false);
+                        }else{
+                            Sprite* life6 = (Sprite*)this->getChildByTag(kTagLife6);
+                            life6->setVisible(false);
                         }
                         
                         player->hurt(enemy->getPower(), enemy->getSpecialEffect());
@@ -447,14 +458,12 @@ void GameScene::collisionDetection()
                     {
                         
                         
-                        if(player->playerStatus() == true){
-                            
-                            
+                        //if(player->playerStatus() == true){
                             
                             //player->hurt(enemy->getPower(), enemy->getSpecialEffect());
                             ///enemy->destroy();
                             
-                        }
+                        //}
                         
                         
                     }
@@ -466,6 +475,7 @@ void GameScene::collisionDetection()
         if (currentNode && currentNode->getTag() == kTagStar)
         {
             
+            auto enemy = dynamic_cast<Enemy*>(currentNode);
             for (auto targetNode : children)
             {
                 
@@ -477,6 +487,7 @@ void GameScene::collisionDetection()
                     {
                         feverTimeFlg = 1;
                         this->schedule(schedule_selector(GameScene::endFeverTime),5.0f);
+                        enemy->destroy();
                     }
                 }
             }
