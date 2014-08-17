@@ -5,7 +5,7 @@ USING_NS_CC;
 
 Player::Player()
 {
-    max_life = 100;
+    max_life = 6;
 
     setLife(max_life);
     setSpeed(15.0f);
@@ -18,6 +18,10 @@ Player::Player()
 
 Player::~Player()
 {
+}
+const char* Player::getImageFileName()
+{
+    return "war_ship.png";
 }
 
 bool Player::init()
@@ -52,7 +56,7 @@ void Player::update(float delta)
 
     if (life <= 0)
     {
-        //log("ゲームオーバー");
+        log("ゲームオーバー");
         //destroy();
     }
 }
@@ -64,7 +68,7 @@ void Player::hurt(int power, BattleManager::SpecialEffect sp)
     {
         return;
     }
-    //life -= power;
+    life -= power;
 
     setOpacity(50);
     setDuration(1.0f);

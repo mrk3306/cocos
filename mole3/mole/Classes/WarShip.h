@@ -13,10 +13,6 @@ public:
     WarShip();
     virtual ~WarShip();
     
-	virtual void attack() override;
-	virtual void attack( Point from, Point to) override;
-	virtual void specialAttack() override;
-	virtual void specialAttack(Point from, Point to) override;
 
 protected:
     virtual const char* getImageFileName() override;

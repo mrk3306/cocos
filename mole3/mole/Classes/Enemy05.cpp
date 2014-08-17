@@ -25,23 +25,6 @@ void Enemy05::move()
 	runAction(Sequence::create(action, actionCompleted, nullptr));
 }
 
-void Enemy05::attack()
-{
-}
-
-void Enemy05::attack(Point from, Point to)
-{
-}
-
-void Enemy05::specialAttack()
-{
-}
-
-void Enemy05::specialAttack(Point from, Point to)
-{
-    
-}
-
 void Enemy05::destroy()
 {
     

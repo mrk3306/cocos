@@ -364,10 +364,11 @@ void GameScene::collisionDetection()
             {
                 if(targetNode && targetNode->getTag() == kTagPlayer)
                 {
-                    log("ENEMY Y %d", (int)currentNode->getPositionY());
+
+                    //log("ENEMY Y %d", (int)currentNode->getPositionY());
                     if (currentNode->getPositionY() <= 5 )
                     {
-                        log("SCREEN OUT LIFE DOWN BEFOR");
+                        //log("SCREEN OUT LIFE DOWN BEFOR");
                         
                         auto player = dynamic_cast<Player*>(targetNode);
                         
@@ -377,7 +378,7 @@ void GameScene::collisionDetection()
                             
                         player->hurt(enemy->getPower(), enemy->getSpecialEffect());
                         enemy->destroy();
-                        log("SCREEN OUT LIFE DOWN AFTER %d",reward_manager->getLife());
+                        //log("SCREEN OUT LIFE DOWN AFTER %d",reward_manager->getLife());
 
                     }
                     
@@ -427,39 +428,12 @@ void GameScene::collisionDetection()
                     if (currentNode->boundingBox().intersectsRect(targetNode->boundingBox()))
                     {
                         log("爆弾と触れた？");
-                        auto reward_manager = RewardManager::getInstance();
-                        reward_manager->setLife(reward_manager->getLife()-1);
-                        /*if(player->playerStatus() == true){
-                        
-                        auto reward_manager = RewardManager::getInstance();
-                        reward_manager->setLife(reward_manager->getLife()-1);
-                        auto life = reward_manager->getLife();
 
-                            
-                        if(life <= 1 ){
-                            Sprite* life1 = (Sprite*)this->getChildByTag(kTagLife1);
-                            life1->setVisible(false);
-                        }else if(life==2){
-                            Sprite* life2 = (Sprite*)this->getChildByTag(kTagLife2);
-                            life2->setVisible(false);
-                        }else if(life==3){
-                            Sprite* life3 = (Sprite*)this->getChildByTag(kTagLife3);
-                            life3->setVisible(false);
-                        }else if(life==4){
-                            Sprite* life4 = (Sprite*)this->getChildByTag(kTagLife4);
-                            life4->setVisible(false);
-                        }else if(life==5){
-                            Sprite* life5 = (Sprite*)this->getChildByTag(kTagLife5);
-                            life5->setVisible(false);
-                        }else{
-                            Sprite* life6 = (Sprite*)this->getChildByTag(kTagLife6);
-                            life6->setVisible(false);
-                        }
-                        */
+                        log("%d",enemy->getPower());
+                        auto reward_manager = RewardManager::getInstance();
+                        reward_manager->setLife(reward_manager->getLife()-1);
                         player->hurt(enemy->getPower(), enemy->getSpecialEffect());
                         enemy->destroy();
-                        
-                        //}
                         
                     }
                 }
@@ -528,7 +502,4 @@ void GameScene::updateInfomationPanel()
     auto time = static_cast<LabelBMFont*>(getChildByTag(kTagTime));
     time->setString(String::createWithFormat("%05d", RewardManager::getInstance()->getTime())->getCString());
     
-    auto reward_manager = RewardManager::getInstance();
-    auto life = reward_manager->getLife();
-    //log("%d",life);
 }

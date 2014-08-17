@@ -79,23 +79,6 @@ void Enemy01::update(float delta)
     
 }
 
-
-void Enemy01::attack()
-{
-}
-
-void Enemy01::attack(Point from, Point to)
-{
-}
-
-void Enemy01::specialAttack()
-{
-}
-
-void Enemy01::specialAttack(Point from, Point to)
-{
-}
-
 void Enemy01::destroy()
 {
     //auto cuptured_enemy = Enemy02::createEnemy(getTarget());

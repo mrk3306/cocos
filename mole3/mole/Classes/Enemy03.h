@@ -15,10 +15,6 @@ public:
     virtual ~Enemy03();
     Size     winSize;
     virtual void move() override;
-	virtual void attack() override;
-	virtual void attack(Point from, Point to) override;
-	virtual void specialAttack() override;
-	virtual void specialAttack(Point from, Point to) override;
     virtual void destroy() override;
     virtual void fever();
     virtual void setPoint(float dt);
