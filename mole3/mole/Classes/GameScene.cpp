@@ -238,7 +238,7 @@ void GameScene::createEnemy()
         
     } else {
         
-        if (rand()%150 == 11)
+        if (rand()%200 == 17)
         {
 
             float enemy_width = winSize.width*(rand()%100+1)/100;
@@ -248,7 +248,7 @@ void GameScene::createEnemy()
             addChild(enemy, enemy->getZOrder(), enemy->getTag());
             enemy->move();
         }
-        else if (rand()%150 == 13)
+/*        else if (rand()%150 == 13)
         {
             float enemy_width = winSize.width*(rand()%100+1)/100;
             if (enemy_width > winSize.height * 0.8)
@@ -305,7 +305,8 @@ void GameScene::createEnemy()
 //            addChild(enemy, enemy->getZOrder(), enemy->getTag());
 //            enemy->move();
         }
-        else if (rand()%150 == 99)
+ */
+        else if (rand()%150 == 100)
         {
             //スター
             float enemy_width = winSize.width*(rand()%100+1)/100;
@@ -334,8 +335,8 @@ void GameScene::collisionDetection()
             {
                 if(targetNode && targetNode->getTag() == kTagPlayer)
                 {
-
-                    if (currentNode->getPositionY() < 20 )
+                    log("ENEMY Y %d", (int)currentNode->getPositionY());
+                    if (currentNode->getPositionY() < 0 )
                     {
                         log("SCREEN OUT LIFE DOWN BEFOR");
                         
@@ -351,10 +352,6 @@ void GameScene::collisionDetection()
 
                     }
                     
-                }
-                if(targetNode->getPositionY() < 0 )
-                {
-                    log("WHAT? %d",targetNode->getPositionY());
                 }
 
                 if (targetNode && targetNode->getTag() == kTagAlly)
@@ -374,8 +371,6 @@ void GameScene::collisionDetection()
                     auto player = dynamic_cast<Player*>(targetNode);
                     if (currentNode->boundingBox().intersectsRect(targetNode->boundingBox()))
                     {
-                        
-                        
                         if(player->playerStatus() == true){
                         
                         auto reward_manager = RewardManager::getInstance();
@@ -399,15 +394,14 @@ void GameScene::collisionDetection()
                 
                 if (targetNode && targetNode->getTag() == kTagPlayer)
                 {
-                    
-                    
                     auto player = dynamic_cast<Player*>(targetNode);
                     if (currentNode->boundingBox().intersectsRect(targetNode->boundingBox()))
                     {
                         log("爆弾と触れた？");
                         if(player->playerStatus() == true){
-                            
-                        player->hurt(enemy->getPower(), enemy->getSpecialEffect());
+
+                        
+                            player->hurt(enemy->getPower(), enemy->getSpecialEffect());
                             enemy->destroy();
                         
                         }
@@ -447,15 +441,11 @@ void GameScene::collisionDetection()
         // スターとあたった場合
         if (currentNode && currentNode->getTag() == kTagStar)
         {
-            
             auto enemy = dynamic_cast<Enemy*>(currentNode);
             for (auto targetNode : children)
             {
-                
-                
                 if (targetNode && targetNode->getTag() == kTagPlayer)
                 {
-                    
                     if (currentNode->boundingBox().intersectsRect(targetNode->boundingBox()))
                     {
                         feverTimeFlg = 1;
@@ -467,8 +457,6 @@ void GameScene::collisionDetection()
         }
     }
 }
-
-
 
 void GameScene::endFeverTime(float dt)
 {
