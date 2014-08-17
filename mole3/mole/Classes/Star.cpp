@@ -25,22 +25,6 @@ void Star::move()
 	runAction(Sequence::create(action, actionCompleted, nullptr));
 }
 
-void Star::attack()
-{
-}
-
-void Star::attack(Point from, Point to)
-{
-}
-
-void Star::specialAttack()
-{
-}
-
-void Star::specialAttack(Point from, Point to)
-{
-}
-
 void Star::destroy()
 {
 

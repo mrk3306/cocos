@@ -248,7 +248,7 @@ void GameScene::createEnemy()
             addChild(enemy, enemy->getZOrder(), enemy->getTag());
             enemy->move();
         }
-/*        else if (rand()%150 == 13)
+        else if (rand()%150 == 13)
         {
             float enemy_width = winSize.width*(rand()%100+1)/100;
             if (enemy_width > winSize.height * 0.8)
@@ -305,7 +305,6 @@ void GameScene::createEnemy()
 //            addChild(enemy, enemy->getZOrder(), enemy->getTag());
 //            enemy->move();
         }
- */
         else if (rand()%150 == 100)
         {
             //スター
@@ -335,10 +334,10 @@ void GameScene::collisionDetection()
             {
                 if(targetNode && targetNode->getTag() == kTagPlayer)
                 {
-                    log("ENEMY Y %d", (int)currentNode->getPositionY());
+                    //log("ENEMY Y %d", (int)currentNode->getPositionY());
                     if (currentNode->getPositionY() < 0 )
                     {
-                        log("SCREEN OUT LIFE DOWN BEFOR");
+                        //log("SCREEN OUT LIFE DOWN BEFOR");
                         
                         auto player = dynamic_cast<Player*>(targetNode);
                         
@@ -348,7 +347,7 @@ void GameScene::collisionDetection()
                             
                         player->hurt(enemy->getPower(), enemy->getSpecialEffect());
                         enemy->destroy();
-                        log("SCREEN OUT LIFE DOWN AFTER %d",reward_manager->getLife());
+                        //log("SCREEN OUT LIFE DOWN AFTER %d",reward_manager->getLife());
 
                     }
                     
@@ -401,6 +400,7 @@ void GameScene::collisionDetection()
                         if(player->playerStatus() == true){
 
                         
+                            log("%d",enemy->getPower());
                             player->hurt(enemy->getPower(), enemy->getSpecialEffect());
                             enemy->destroy();
                         

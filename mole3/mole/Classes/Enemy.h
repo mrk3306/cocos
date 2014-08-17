@@ -55,11 +55,6 @@ public:
     };
 
     virtual void move() = 0;
-	virtual void attack() = 0;
-	virtual void attack(Point from, Point to) = 0;
-	virtual void specialAttack() = 0;
-	virtual void specialAttack(Point from, Point to) = 0;
-
     virtual void update(float delta);
     virtual void hurt(int power, BattleManager::SpecialEffect sp);
     virtual void recovery(int power);

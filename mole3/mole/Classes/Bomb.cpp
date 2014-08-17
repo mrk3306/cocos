@@ -5,6 +5,7 @@ USING_NS_CC;
 Bomb::Bomb()
 {
     setSpecialEffect(BattleManager::SpecialEffect::Capture);
+    setPower(6);
 }
 
 Bomb::~Bomb()

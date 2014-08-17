@@ -63,22 +63,6 @@ void Enemy03::move()
 	runAction(Sequence::create(action, actionCompleted, nullptr));
 }
 
-void Enemy03::attack()
-{
-}
-
-void Enemy03::attack(Point from, Point to)
-{
-}
-
-void Enemy03::specialAttack()
-{
-}
-
-void Enemy03::specialAttack(Point from, Point to)
-{
-}
-
 void Enemy03::destroy()
 {
     //auto cuptured_enemy = Enemy02::createEnemy(getTarget());
