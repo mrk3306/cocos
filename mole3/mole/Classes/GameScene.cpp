@@ -236,9 +236,7 @@ void GameScene::createEnemy()
             enemy->fever();
         }
         
-        
-    }else{
-        
+    } else {
         
         if (rand()%150 == 11)
         {
@@ -277,7 +275,7 @@ void GameScene::createEnemy()
             addChild(enemy6, enemy6->getZOrder(), enemy6->getTag());
             enemy6->move();
         }
-        else if (rand()%150 == 111)
+        else if (rand()%150 == 23)
         {
             // 爆弾
             float enemy_width = winSize.width*(rand()%100+1)/100;
@@ -309,24 +307,19 @@ void GameScene::createEnemy()
         }
         else if (rand()%150 == 99)
         {
-            
             //スター
             float enemy_width = winSize.width*(rand()%100+1)/100;
             if (enemy_width > winSize.height * 0.4)
             {
                 enemy_width = winSize.height * 0.4;
             }
-            
+
             auto star = Star::createEnemy(warShip);
             star->setPosition(enemy_width, winSize.height);
             addChild(star, star->getZOrder(), star->getTag());
             star->move();
         }
-        
-        
-        
     }
-    
 }
 
 void GameScene::collisionDetection()
@@ -339,14 +332,31 @@ void GameScene::collisionDetection()
             auto enemy = dynamic_cast<Enemy*>(currentNode);
             for (auto targetNode : children)
             {
-                
-                if(targetNode->getPositionY() < 0 ){
-                    
-                    log("%d",targetNode->getPositionY());
+                if(targetNode && targetNode->getTag() == kTagPlayer)
+                {
+
+                    if (currentNode->getPositionY() < 20 )
+                    {
+                        log("SCREEN OUT LIFE DOWN BEFOR");
+                        
+                        auto player = dynamic_cast<Player*>(targetNode);
+                        
+                        auto reward_manager = RewardManager::getInstance();
+                        reward_manager->setLife(reward_manager->getLife()-1);
+                        auto life = reward_manager->getLife();
+                            
+                        player->hurt(enemy->getPower(), enemy->getSpecialEffect());
+                        enemy->destroy();
+                        log("SCREEN OUT LIFE DOWN AFTER %d",reward_manager->getLife());
+
+                    }
                     
                 }
-                
-                
+                if(targetNode->getPositionY() < 0 )
+                {
+                    log("WHAT? %d",targetNode->getPositionY());
+                }
+
                 if (targetNode && targetNode->getTag() == kTagAlly)
                 {
                     auto ally = dynamic_cast<Ally*>(targetNode);
@@ -371,20 +381,12 @@ void GameScene::collisionDetection()
                         auto reward_manager = RewardManager::getInstance();
                         reward_manager->setScore(reward_manager->getScore() + 50);
                         
-                        
                         player->hurt(enemy->getPower(), enemy->getSpecialEffect());
                         enemy->destroy();
                         
                         }
-                        
                     }
-                    
                 }
-                
-                
-                
-                
-                
             }
         }
         
@@ -395,17 +397,15 @@ void GameScene::collisionDetection()
             for (auto targetNode : children)
             {
                 
-                
                 if (targetNode && targetNode->getTag() == kTagPlayer)
                 {
+                    
                     
                     auto player = dynamic_cast<Player*>(targetNode);
                     if (currentNode->boundingBox().intersectsRect(targetNode->boundingBox()))
                     {
-                        
-                        
+                        log("爆弾と触れた？");
                         if(player->playerStatus() == true){
-                        
                         
                         auto reward_manager = RewardManager::getInstance();
                         reward_manager->setLife(reward_manager->getLife()-1);
@@ -436,7 +436,6 @@ void GameScene::collisionDetection()
                         
                         }
                         
-                        
                     }
                 }
             }
@@ -448,7 +447,6 @@ void GameScene::collisionDetection()
             auto enemy = dynamic_cast<Enemy*>(currentNode);
             for (auto targetNode : children)
             {
-                
                 
                 if (targetNode && targetNode->getTag() == kTagPlayer)
                 {
@@ -464,7 +462,6 @@ void GameScene::collisionDetection()
                             ///enemy->destroy();
                             
                         //}
-                        
                         
                     }
                 }
@@ -492,8 +489,6 @@ void GameScene::collisionDetection()
                 }
             }
         }
-    
-        
     }
 }
 
@@ -517,8 +512,4 @@ void GameScene::updateInfomationPanel()
     auto reward_manager = RewardManager::getInstance();
     auto life = reward_manager->getLife();
     //log("%d",life);
-    
-    
-    
-    
 }
