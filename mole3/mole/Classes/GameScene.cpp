@@ -51,6 +51,7 @@ bool GameScene::init()
 void GameScene::update(float delta)
 {
     createEnemy();
+    dispLife();
     collisionDetection();
     updateInfomationPanel();
 }
@@ -133,7 +134,7 @@ void GameScene::initialPlacement()
 
     auto heart06 = LifeLeft::createOperationPanel(warShip);
     heart06->setPosition(Point(winSize.width * 0.43, winSize.height * 0.85));
-    //addChild(heart06, kZOrderLabel, kTagLife6);
+    addChild(heart06, kZOrderLabel, kTagLife6);
     
     
     //プレイヤー
@@ -323,6 +324,34 @@ void GameScene::createEnemy()
     }
 }
 
+void GameScene::dispLife()
+{
+    auto reward_manager = RewardManager::getInstance();
+
+    auto life = reward_manager->getLife();
+    
+    log("Life is %d", life);
+    if(life == 0 ){
+        Sprite* life1 = (Sprite*)this->getChildByTag(kTagLife1);
+        life1->setVisible(false);
+    }else if(life == 1){
+        Sprite* life2 = (Sprite*)this->getChildByTag(kTagLife2);
+        life2->setVisible(false);
+    }else if(life == 2){
+        Sprite* life3 = (Sprite*)this->getChildByTag(kTagLife3);
+        life3->setVisible(false);
+    }else if(life == 3){
+        Sprite* life4 = (Sprite*)this->getChildByTag(kTagLife4);
+        life4->setVisible(false);
+    }else if(life == 4){
+        Sprite* life5 = (Sprite*)this->getChildByTag(kTagLife5);
+        life5->setVisible(false);
+    }else if(life == 5) {
+        Sprite* life6 = (Sprite*)this->getChildByTag(kTagLife6);
+        life6->setVisible(false);
+    }
+}
+
 void GameScene::collisionDetection()
 {
     auto children = getChildren();
@@ -336,7 +365,7 @@ void GameScene::collisionDetection()
                 if(targetNode && targetNode->getTag() == kTagPlayer)
                 {
                     log("ENEMY Y %d", (int)currentNode->getPositionY());
-                    if (currentNode->getPositionY() < 0 )
+                    if (currentNode->getPositionY() <= 5 )
                     {
                         log("SCREEN OUT LIFE DOWN BEFOR");
                         
@@ -398,7 +427,9 @@ void GameScene::collisionDetection()
                     if (currentNode->boundingBox().intersectsRect(targetNode->boundingBox()))
                     {
                         log("爆弾と触れた？");
-                        if(player->playerStatus() == true){
+                        auto reward_manager = RewardManager::getInstance();
+                        reward_manager->setLife(reward_manager->getLife()-1);
+                        /*if(player->playerStatus() == true){
                         
                         auto reward_manager = RewardManager::getInstance();
                         reward_manager->setLife(reward_manager->getLife()-1);
@@ -424,11 +455,11 @@ void GameScene::collisionDetection()
                             Sprite* life6 = (Sprite*)this->getChildByTag(kTagLife6);
                             life6->setVisible(false);
                         }
-                        
+                        */
                         player->hurt(enemy->getPower(), enemy->getSpecialEffect());
                         enemy->destroy();
                         
-                        }
+                        //}
                         
                     }
                 }

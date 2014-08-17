@@ -40,6 +40,7 @@ private:
     void initialPlacement();
     void createPlayer();
     void createEnemy();
+    void dispLife();
     void collisionDetection();
     void updateInfomationPanel();
     void countdown(float delta);
