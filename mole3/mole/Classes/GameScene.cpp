@@ -248,7 +248,7 @@ void GameScene::createEnemy()
             addChild(enemy, enemy->getZOrder(), enemy->getTag());
             enemy->move();
         }
-/*        else if (rand()%150 == 13)
+        else if (rand()%150 == 13)
         {
             float enemy_width = winSize.width*(rand()%100+1)/100;
             if (enemy_width > winSize.height * 0.8)
@@ -305,7 +305,7 @@ void GameScene::createEnemy()
 //            addChild(enemy, enemy->getZOrder(), enemy->getTag());
 //            enemy->move();
         }
- */
+
         else if (rand()%150 == 100)
         {
             //スター
@@ -371,7 +371,7 @@ void GameScene::collisionDetection()
                     auto player = dynamic_cast<Player*>(targetNode);
                     if (currentNode->boundingBox().intersectsRect(targetNode->boundingBox()))
                     {
-                        if(player->playerStatus() == true){
+                     //   if(player->playerStatus() == true){
                         
                         auto reward_manager = RewardManager::getInstance();
                         reward_manager->setScore(reward_manager->getScore() + 50);
@@ -379,7 +379,7 @@ void GameScene::collisionDetection()
                         player->hurt(enemy->getPower(), enemy->getSpecialEffect());
                         enemy->destroy();
                         
-                        }
+                      //  }
                     }
                 }
             }
