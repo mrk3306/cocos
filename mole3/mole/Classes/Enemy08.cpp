@@ -5,7 +5,7 @@ USING_NS_CC;
 Enemy08::Enemy08()
 {
     score = 10;
-    setTag(kTagLife);
+   setTag(kTagLife);
 }
 
 Enemy08::~Enemy08()
@@ -21,7 +21,7 @@ void Enemy08::move()
 {
 	auto action = MoveTo::create(3.0f, Point(getPositionX(), 0));
     FiniteTimeAction* actionCompleted = CallFuncN::create(CC_CALLBACK_1(Enemy08::onActionCompletedThenRemove, this));
-
+    
 	runAction(Sequence::create(action, actionCompleted, nullptr));
 }
 

@@ -104,10 +104,5 @@ void Enemy::setLife()
 
 void Enemy::onActionCompletedThenRemove(Object* sender)
 {
-    
-    
-    log("あああああああああ");
-    
-    
     static_cast<Node*>(sender)->removeFromParent();
 }

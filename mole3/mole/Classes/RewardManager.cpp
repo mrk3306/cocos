@@ -26,5 +26,5 @@ void RewardManager::reset()
 {
     setScore(0);
     setTime(500);
-    setLife(3);
+    setLife(6);
 }
