@@ -406,33 +406,9 @@ void GameScene::collisionDetection()
                     {
                         log("爆弾と触れた？");
                         if(player->playerStatus() == true){
-                        
-                        auto reward_manager = RewardManager::getInstance();
-                        reward_manager->setLife(reward_manager->getLife()-1);
-                        auto life = reward_manager->getLife();
                             
-                        if(life <= 1 ){
-                            Sprite* life1 = (Sprite*)this->getChildByTag(kTagLife1);
-                            life1->setVisible(false);
-                        }else if(life==2){
-                            Sprite* life2 = (Sprite*)this->getChildByTag(kTagLife2);
-                            life2->setVisible(false);
-                        }else if(life==3){
-                            Sprite* life3 = (Sprite*)this->getChildByTag(kTagLife3);
-                            life3->setVisible(false);
-                        }else if(life==4){
-                            Sprite* life4 = (Sprite*)this->getChildByTag(kTagLife4);
-                            life4->setVisible(false);
-                        }else if(life==5){
-                            Sprite* life5 = (Sprite*)this->getChildByTag(kTagLife5);
-                            life5->setVisible(false);
-                        }else{
-                            Sprite* life6 = (Sprite*)this->getChildByTag(kTagLife6);
-                            life6->setVisible(false);
-                        }
-                        
                         player->hurt(enemy->getPower(), enemy->getSpecialEffect());
-                        enemy->destroy();
+                            enemy->destroy();
                         
                         }
                         
@@ -509,7 +485,4 @@ void GameScene::updateInfomationPanel()
     auto time = static_cast<LabelBMFont*>(getChildByTag(kTagTime));
     time->setString(String::createWithFormat("%05d", RewardManager::getInstance()->getTime())->getCString());
     
-    auto reward_manager = RewardManager::getInstance();
-    auto life = reward_manager->getLife();
-    //log("%d",life);
 }
