@@ -6,6 +6,7 @@ Enemy01::Enemy01()
 :winSize(Director::getInstance()->getWinSize())
 {
     score = 10;
+    setTag(kTagEnemy);
 }
 
 Enemy01::~Enemy01()

@@ -210,11 +210,6 @@ void GameScene::createEnemy()
         {
             
             float enemy_width = winSize.width*(rand()%100+1)/100;
-            if (enemy_width < winSize.height * 0.4) {
-                enemy_width = winSize.height * 0.4;
-            } else if (enemy_width > winSize.height * 0.8) {
-                enemy_width = winSize.height * 0.8;
-            }
             
             auto enemy = Enemy01::createEnemy(warShip);
             enemy->setPosition(enemy_width, winSize.height);
@@ -225,11 +220,6 @@ void GameScene::createEnemy()
         {
             
             float enemy_width = winSize.width*(rand()%100+1)/100;
-            if (enemy_width < winSize.height * 0.4) {
-                enemy_width = winSize.height * 0.4;
-            } else if (enemy_width > winSize.height * 0.8) {
-                enemy_width = winSize.height * 0.8;
-            }
             
             auto enemy = Enemy03::createEnemy(warShip);
             enemy->setPosition(enemy_width, winSize.height);
@@ -239,38 +229,30 @@ void GameScene::createEnemy()
         
     } else {
         
-        if (rand()%200 == 17)
+        if (rand()%200 == 10)
         {
 
             float enemy_width = winSize.width*(rand()%100+1)/100;
-            
             auto enemy = Enemy01::createEnemy(warShip);
             enemy->setPosition(enemy_width, winSize.height);
             addChild(enemy, enemy->getZOrder(), enemy->getTag());
             enemy->move();
+    
         }
-        else if (rand()%150 == 13)
+        else if (rand()%150 == 20)
         {
-            float enemy_width = winSize.width*(rand()%100+1)/100;
-            if (enemy_width > winSize.height * 0.8)
-            {
-                enemy_width = winSize.height * 0.8;
-            }
             
+            float enemy_width = winSize.width*(rand()%100+1)/100;
             auto enemy = Enemy03::createEnemy(warShip);
             enemy->setPosition(enemy_width, winSize.height);
             addChild(enemy, enemy->getZOrder(), enemy->getTag());
             enemy->move();
+
         }
-        else if (rand()%150 ==16)
+        else if (rand()%150 ==30)
         {
             
             float enemy_width = winSize.width*(rand()%100+1)/100;
-            if (enemy_width > winSize.height * 0.8)
-            {
-                enemy_width = winSize.height * 0.8;
-            }
-            
             auto enemy6 = Enemy06::createEnemy(warShip);
             enemy6->setPosition(enemy_width, winSize.height);
             addChild(enemy6, enemy6->getZOrder(), enemy6->getTag());
@@ -279,6 +261,7 @@ void GameScene::createEnemy()
         else if (rand()%150 == 23)
         {
             // 爆弾
+            /*
             float enemy_width = winSize.width*(rand()%100+1)/100;
             if (enemy_width > winSize.height * 0.8)
             {
@@ -289,7 +272,7 @@ void GameScene::createEnemy()
             enemy->setPosition(enemy_width, winSize.height);
             addChild(enemy, enemy->getZOrder(), enemy->getTag());
             enemy->move();
-            
+            */
         }
         else if (rand()%150 == 133)
         {
@@ -310,6 +293,7 @@ void GameScene::createEnemy()
         else if (rand()%150 == 100)
         {
             //スター
+            /*
             float enemy_width = winSize.width*(rand()%100+1)/100;
             if (enemy_width > winSize.height * 0.4)
             {
@@ -320,6 +304,7 @@ void GameScene::createEnemy()
             star->setPosition(enemy_width, winSize.height);
             addChild(star, star->getZOrder(), star->getTag());
             star->move();
+            */
         }
     }
 }
@@ -357,6 +342,7 @@ void GameScene::collisionDetection()
     auto children = getChildren();
     for (auto currentNode : children)
     {
+
         if (currentNode && currentNode->getTag() == kTagEnemy)
         {
             auto enemy = dynamic_cast<Enemy*>(currentNode);
@@ -365,18 +351,19 @@ void GameScene::collisionDetection()
                 if(targetNode && targetNode->getTag() == kTagPlayer)
                 {
 
-                    //log("ENEMY Y %d", (int)currentNode->getPositionY());
-                    if (currentNode->getPositionY() <= 5 )
+                    if (currentNode->getPositionY() <= 90 )
                     {
                         //log("SCREEN OUT LIFE DOWN BEFOR");
-                        
+                        log("SCREEN OUT LIFE DOWN BEFOR!!!!!!!!");
                         auto player = dynamic_cast<Player*>(targetNode);
+  
+                        auto score = static_cast<LabelBMFont*>(getChildByTag(kTagLife));
+                        score->setString(String::createWithFormat("%05d", RewardManager::getInstance()->getScore())->getCString());
                         
                         auto reward_manager = RewardManager::getInstance();
                         reward_manager->setLife(reward_manager->getLife()-1);
-                        auto life = reward_manager->getLife();
-                            
-                        player->hurt(enemy->getPower(), enemy->getSpecialEffect());
+  
+                    
                         enemy->destroy();
                         //log("SCREEN OUT LIFE DOWN AFTER %d",reward_manager->getLife());
 

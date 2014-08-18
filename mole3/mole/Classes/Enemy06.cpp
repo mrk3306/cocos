@@ -5,6 +5,7 @@ USING_NS_CC;
 Enemy06::Enemy06()
 {
     score = 10;
+    setTag(kTagEnemy);
 }
 
 Enemy06::~Enemy06()
