@@ -96,17 +96,12 @@
 		72B7A1441996568F0071AB52 /* war_ship.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B7A1431996568F0071AB52 /* war_ship.png */; };
 		72CE709D199752AD0020F76C /* WarShip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 729059F91997464500E85837 /* WarShip.cpp */; };
 		72CE709E199752AD0020F76C /* WarShip.h in Sources */ = {isa = PBXBuildFile; fileRef = 729059FA1997464500E85837 /* WarShip.h */; };
-		72CE709F199752AD0020F76C /* Ally.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7290596A1997463B00E85837 /* Ally.cpp */; };
-		72CE70A0199752AD0020F76C /* Ally.h in Sources */ = {isa = PBXBuildFile; fileRef = 7290596B1997463B00E85837 /* Ally.h */; };
-		72CE70A1199752AD0020F76C /* AllyClassLoader.h in Sources */ = {isa = PBXBuildFile; fileRef = 7290596C1997463B00E85837 /* AllyClassLoader.h */; };
 		72CE70A4199752AD0020F76C /* ArrowLeft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7290596F1997463B00E85837 /* ArrowLeft.cpp */; };
 		72CE70A5199752AD0020F76C /* ArrowLeft.h in Sources */ = {isa = PBXBuildFile; fileRef = 729059701997463B00E85837 /* ArrowLeft.h */; };
 		72CE70A6199752AD0020F76C /* ArrowRight.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 729059711997463B00E85837 /* ArrowRight.cpp */; };
 		72CE70A7199752AD0020F76C /* ArrowRight.h in Sources */ = {isa = PBXBuildFile; fileRef = 729059721997463B00E85837 /* ArrowRight.h */; };
 		72CE70AC199752AE0020F76C /* BattleManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 729059771997463B00E85837 /* BattleManager.cpp */; };
 		72CE70AD199752AE0020F76C /* BattleManager.h in Sources */ = {isa = PBXBuildFile; fileRef = 729059781997463B00E85837 /* BattleManager.h */; };
-		72CE70AE199752AE0020F76C /* Bomb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 729059791997463B00E85837 /* Bomb.cpp */; };
-		72CE70AF199752AE0020F76C /* Bomb.h in Sources */ = {isa = PBXBuildFile; fileRef = 7290597A1997463B00E85837 /* Bomb.h */; };
 		72CE70B0199752AE0020F76C /* BurnOut.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7290597B1997463B00E85837 /* BurnOut.cpp */; };
 		72CE70B1199752AE0020F76C /* BurnOut.h in Sources */ = {isa = PBXBuildFile; fileRef = 7290597C1997463B00E85837 /* BurnOut.h */; };
 		72CE70B5199752AE0020F76C /* Config.h in Sources */ = {isa = PBXBuildFile; fileRef = 729059811997463B00E85837 /* Config.h */; };
@@ -122,8 +117,6 @@
 		72CE70CB199752AE0020F76C /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 729059A61997463C00E85837 /* GameScene.cpp */; };
 		72CE70CC199752AE0020F76C /* GameScene.h in Sources */ = {isa = PBXBuildFile; fileRef = 729059A71997463C00E85837 /* GameScene.h */; };
 		72CE70CD199752AE0020F76C /* Ignite.h in Sources */ = {isa = PBXBuildFile; fileRef = 729059A91997463C00E85837 /* Ignite.h */; };
-		72CE70D6199752AE0020F76C /* NormalBullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 729059B91997463C00E85837 /* NormalBullet.cpp */; };
-		72CE70D7199752AE0020F76C /* NormalBullet.h in Sources */ = {isa = PBXBuildFile; fileRef = 729059BA1997463C00E85837 /* NormalBullet.h */; };
 		72CE70D8199752AE0020F76C /* OperationPanel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 729059BB1997463C00E85837 /* OperationPanel.cpp */; };
 		72CE70D9199752AE0020F76C /* OperationPanel.h in Sources */ = {isa = PBXBuildFile; fileRef = 729059BC1997463C00E85837 /* OperationPanel.h */; };
 		72CE70DA199752AE0020F76C /* OperationPanelClassLoader.h in Sources */ = {isa = PBXBuildFile; fileRef = 729059BD1997463C00E85837 /* OperationPanelClassLoader.h */; };
@@ -368,17 +361,12 @@
 		724141A41997B67D00354642 /* LifeRight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LifeRight.cpp; path = ../Classes/LifeRight.cpp; sourceTree = "<group>"; };
 		724141A51997B67D00354642 /* LifeRight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LifeRight.h; path = ../Classes/LifeRight.h; sourceTree = "<group>"; };
 		728B3D5619973395004FDF6E /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameScene.cpp; path = ../Classes/GameScene.cpp; sourceTree = "<group>"; };
-		7290596A1997463B00E85837 /* Ally.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ally.cpp; path = ../Classes/Ally.cpp; sourceTree = "<group>"; };
-		7290596B1997463B00E85837 /* Ally.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ally.h; path = ../Classes/Ally.h; sourceTree = "<group>"; };
-		7290596C1997463B00E85837 /* AllyClassLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AllyClassLoader.h; path = ../Classes/AllyClassLoader.h; sourceTree = "<group>"; };
 		7290596F1997463B00E85837 /* ArrowLeft.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ArrowLeft.cpp; path = ../Classes/ArrowLeft.cpp; sourceTree = "<group>"; };
 		729059701997463B00E85837 /* ArrowLeft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArrowLeft.h; path = ../Classes/ArrowLeft.h; sourceTree = "<group>"; };
 		729059711997463B00E85837 /* ArrowRight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ArrowRight.cpp; path = ../Classes/ArrowRight.cpp; sourceTree = "<group>"; };
 		729059721997463B00E85837 /* ArrowRight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArrowRight.h; path = ../Classes/ArrowRight.h; sourceTree = "<group>"; };
 		729059771997463B00E85837 /* BattleManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BattleManager.cpp; path = ../Classes/BattleManager.cpp; sourceTree = "<group>"; };
 		729059781997463B00E85837 /* BattleManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BattleManager.h; path = ../Classes/BattleManager.h; sourceTree = "<group>"; };
-		729059791997463B00E85837 /* Bomb.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Bomb.cpp; path = ../Classes/Bomb.cpp; sourceTree = "<group>"; };
-		7290597A1997463B00E85837 /* Bomb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Bomb.h; path = ../Classes/Bomb.h; sourceTree = "<group>"; };
 		7290597B1997463B00E85837 /* BurnOut.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BurnOut.cpp; path = ../Classes/BurnOut.cpp; sourceTree = "<group>"; };
 		7290597C1997463B00E85837 /* BurnOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BurnOut.h; path = ../Classes/BurnOut.h; sourceTree = "<group>"; };
 		729059811997463B00E85837 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Config.h; path = ../Classes/Config.h; sourceTree = "<group>"; };
@@ -395,8 +383,6 @@
 		729059A71997463C00E85837 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = ../Classes/GameScene.h; sourceTree = "<group>"; };
 		729059A81997463C00E85837 /* Ignite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ignite.cpp; path = ../Classes/Ignite.cpp; sourceTree = "<group>"; };
 		729059A91997463C00E85837 /* Ignite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ignite.h; path = ../Classes/Ignite.h; sourceTree = "<group>"; };
-		729059B91997463C00E85837 /* NormalBullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NormalBullet.cpp; path = ../Classes/NormalBullet.cpp; sourceTree = "<group>"; };
-		729059BA1997463C00E85837 /* NormalBullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NormalBullet.h; path = ../Classes/NormalBullet.h; sourceTree = "<group>"; };
 		729059BB1997463C00E85837 /* OperationPanel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = OperationPanel.cpp; path = ../Classes/OperationPanel.cpp; sourceTree = "<group>"; };
 		729059BC1997463C00E85837 /* OperationPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OperationPanel.h; path = ../Classes/OperationPanel.h; sourceTree = "<group>"; };
 		729059BD1997463C00E85837 /* OperationPanelClassLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OperationPanelClassLoader.h; path = ../Classes/OperationPanelClassLoader.h; sourceTree = "<group>"; };
@@ -491,9 +477,6 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				7290596A1997463B00E85837 /* Ally.cpp */,
-				7290596B1997463B00E85837 /* Ally.h */,
-				7290596C1997463B00E85837 /* AllyClassLoader.h */,
 				7241413B19975C6E00354642 /* AppDelegate.cpp */,
 				7241413C19975C6E00354642 /* AppDelegate.h */,
 				7290596F1997463B00E85837 /* ArrowLeft.cpp */,
@@ -502,8 +485,6 @@
 				729059721997463B00E85837 /* ArrowRight.h */,
 				729059771997463B00E85837 /* BattleManager.cpp */,
 				729059781997463B00E85837 /* BattleManager.h */,
-				729059791997463B00E85837 /* Bomb.cpp */,
-				7290597A1997463B00E85837 /* Bomb.h */,
 				7290597B1997463B00E85837 /* BurnOut.cpp */,
 				7290597C1997463B00E85837 /* BurnOut.h */,
 				729059811997463B00E85837 /* Config.h */,
@@ -530,8 +511,6 @@
 				724141A31997B67D00354642 /* LifeLeft.h */,
 				724141A41997B67D00354642 /* LifeRight.cpp */,
 				724141A51997B67D00354642 /* LifeRight.h */,
-				729059B91997463C00E85837 /* NormalBullet.cpp */,
-				729059BA1997463C00E85837 /* NormalBullet.h */,
 				729059BB1997463C00E85837 /* OperationPanel.cpp */,
 				729059BC1997463C00E85837 /* OperationPanel.h */,
 				729059BD1997463C00E85837 /* OperationPanelClassLoader.h */,
@@ -935,10 +914,7 @@
 				724141931997B3D100354642 /* Enemy08.h in Sources */,
 				72CE709D199752AD0020F76C /* WarShip.cpp in Sources */,
 				72CE709E199752AD0020F76C /* WarShip.h in Sources */,
-				72CE709F199752AD0020F76C /* Ally.cpp in Sources */,
-				72CE70A0199752AD0020F76C /* Ally.h in Sources */,
 				724141A61997B67D00354642 /* LifeLeft.cpp in Sources */,
-				72CE70A1199752AD0020F76C /* AllyClassLoader.h in Sources */,
 				72CE70A4199752AD0020F76C /* ArrowLeft.cpp in Sources */,
 				72CE70A5199752AD0020F76C /* ArrowLeft.h in Sources */,
 				72CE70A6199752AD0020F76C /* ArrowRight.cpp in Sources */,
@@ -946,8 +922,6 @@
 				72CE70A7199752AD0020F76C /* ArrowRight.h in Sources */,
 				72CE70AC199752AE0020F76C /* BattleManager.cpp in Sources */,
 				72CE70AD199752AE0020F76C /* BattleManager.h in Sources */,
-				72CE70AE199752AE0020F76C /* Bomb.cpp in Sources */,
-				72CE70AF199752AE0020F76C /* Bomb.h in Sources */,
 				72CE70B0199752AE0020F76C /* BurnOut.cpp in Sources */,
 				72CE70B1199752AE0020F76C /* BurnOut.h in Sources */,
 				72CE70B5199752AE0020F76C /* Config.h in Sources */,
@@ -966,8 +940,6 @@
 				72CE70CB199752AE0020F76C /* GameScene.cpp in Sources */,
 				72CE70CC199752AE0020F76C /* GameScene.h in Sources */,
 				72CE70CD199752AE0020F76C /* Ignite.h in Sources */,
-				72CE70D6199752AE0020F76C /* NormalBullet.cpp in Sources */,
-				72CE70D7199752AE0020F76C /* NormalBullet.h in Sources */,
 				72CE70D8199752AE0020F76C /* OperationPanel.cpp in Sources */,
 				72CE70D9199752AE0020F76C /* OperationPanel.h in Sources */,
 				72CE70DA199752AE0020F76C /* OperationPanelClassLoader.h in Sources */,

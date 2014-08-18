@@ -261,7 +261,6 @@ void GameScene::createEnemy()
         else if (rand()%150 == 23)
         {
             // 爆弾
-            /*
             float enemy_width = winSize.width*(rand()%100+1)/100;
             if (enemy_width > winSize.height * 0.8)
             {
@@ -272,7 +271,7 @@ void GameScene::createEnemy()
             enemy->setPosition(enemy_width, winSize.height);
             addChild(enemy, enemy->getZOrder(), enemy->getTag());
             enemy->move();
-            */
+
         }
         else if (rand()%150 == 133)
         {
@@ -293,7 +292,6 @@ void GameScene::createEnemy()
         else if (rand()%150 == 100)
         {
             //スター
-            /*
             float enemy_width = winSize.width*(rand()%100+1)/100;
             if (enemy_width > winSize.height * 0.4)
             {
@@ -304,7 +302,7 @@ void GameScene::createEnemy()
             star->setPosition(enemy_width, winSize.height);
             addChild(star, star->getZOrder(), star->getTag());
             star->move();
-            */
+
         }
     }
 }
@@ -369,16 +367,6 @@ void GameScene::collisionDetection()
 
                     }
                     
-                }
-
-                if (targetNode && targetNode->getTag() == kTagAlly)
-                {
-                    auto ally = dynamic_cast<Ally*>(targetNode);
-                    if (currentNode->boundingBox().intersectsRect(targetNode->boundingBox()))
-                    {
-                        //ally->hurt(enemy->getPower(), enemy->getSpecialEffect());
-                        //enemy->hurt(ally->getPower(), ally->getSpecialEffect());
-                    }
                 }
                 
                 // 追加　スコア表示

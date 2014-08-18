@@ -4,7 +4,6 @@
 #include "cocos2d.h"
 #include "Config.h"
 #include "BattleManager.h"
-#include "AllyClassLoader.h"
 #include "ParticleEffectClassLoader.h"
 
 USING_NS_CC;

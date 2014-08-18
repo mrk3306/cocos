@@ -10,7 +10,6 @@
 #include "PlayerClassLoader.h"
 #include "WarShip.h"
 #include "EnemyClassLoader.h"
-#include "AllyClassLoader.h"
 #include "LifeLeft.h"
 #include "LifeRight.h"
 
