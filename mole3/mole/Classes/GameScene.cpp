@@ -206,7 +206,7 @@ void GameScene::createEnemy()
 {
     if(feverTimeFlg == 1){
         
-        if (rand()%150 == 1  || rand()%150 == 2 || rand()%150 == 3)
+        if (rand()%150 == 10  || rand()%150 == 20)
         {
             
             float enemy_width = winSize.width*(rand()%100+1)/100;
@@ -216,7 +216,7 @@ void GameScene::createEnemy()
             addChild(enemy, enemy->getZOrder(), enemy->getTag());
             enemy->fever();
         }
-        else if (rand()%150 == 4 || rand()%150 == 5  || rand()%150 == 6)
+        else if (rand()%150 == 40 || rand()%150 == 50)
         {
             
             float enemy_width = winSize.width*(rand()%100+1)/100;
@@ -229,7 +229,7 @@ void GameScene::createEnemy()
         
     } else {
         
-        if (rand()%200 == 10)
+        if (rand()%150 == 10)
         {
 
             float enemy_width = winSize.width*(rand()%100+1)/100;
@@ -258,7 +258,7 @@ void GameScene::createEnemy()
             addChild(enemy6, enemy6->getZOrder(), enemy6->getTag());
             enemy6->move();
         }
-        else if (rand()%150 == 23)
+        else if (rand()%150 == 40)
         {
             // 爆弾
             float enemy_width = winSize.width*(rand()%100+1)/100;
@@ -273,23 +273,21 @@ void GameScene::createEnemy()
             enemy->move();
 
         }
-        else if (rand()%150 == 133)
+        else if (rand()%150 == 50)
         {
             
             //ライフ
-//            float enemy_width = winSize.width*(rand()%100+1)/100;
-//            if (enemy_width > winSize.height * 0.8)
-//            {
-//                enemy_width = winSize.height * 0.8;
-//            }
-//            
-//            auto enemy = Enemy08::createEnemy(warShip);
-//            enemy->setPosition(enemy_width, winSize.height);
-//            addChild(enemy, enemy->getZOrder(), enemy->getTag());
-//            enemy->move();
+            float enemy_width = winSize.width*(rand()%100+1)/100;
+            enemy_width = winSize.height * 0.8;
+            
+            auto enemy = Enemy08::createEnemy(warShip);
+            enemy->setPosition(enemy_width, winSize.height);
+            addChild(enemy, enemy->getZOrder(), enemy->getTag());
+            enemy->move();
+
         }
 
-        else if (rand()%150 == 100)
+        else if (rand()%150 == 149)
         {
             //スター
             float enemy_width = winSize.width*(rand()%100+1)/100;
@@ -312,23 +310,43 @@ void GameScene::dispLife()
     auto life = RewardManager::getInstance()->getLife();
     
     log("Life is %d", life);
+    
+    Sprite* life1 = (Sprite*)this->getChildByTag(kTagLife1);
+    Sprite* life2 = (Sprite*)this->getChildByTag(kTagLife2);
+    Sprite* life3 = (Sprite*)this->getChildByTag(kTagLife3);
+    Sprite* life4 = (Sprite*)this->getChildByTag(kTagLife4);
+    Sprite* life5 = (Sprite*)this->getChildByTag(kTagLife5);
+    Sprite* life6 = (Sprite*)this->getChildByTag(kTagLife6);
+
+    
     if(life == 0 ){
-        Sprite* life1 = (Sprite*)this->getChildByTag(kTagLife1);
         life1->setVisible(false);
-    }else if(life == 1){
-        Sprite* life2 = (Sprite*)this->getChildByTag(kTagLife2);
         life2->setVisible(false);
-    }else if(life == 2){
-        Sprite* life3 = (Sprite*)this->getChildByTag(kTagLife3);
+        //life3->setVisible(false);
+        //life4->setVisible(false);
+        //life5->setVisible(false);
+        //life6->setVisible(false);
+        
+    }else if(life == 1){
+        life2->setVisible(false);
         life3->setVisible(false);
-    }else if(life == 3){
-        Sprite* life4 = (Sprite*)this->getChildByTag(kTagLife4);
+        //life4->setVisible(false);
+        //life5->setVisible(false);
+        //life6->setVisible(false);
+        
+    }else if(life == 2){
+        life3->setVisible(false);
         life4->setVisible(false);
-    }else if(life == 4){
-        Sprite* life5 = (Sprite*)this->getChildByTag(kTagLife5);
+        //life5->setVisible(false);
+        //life6->setVisible(false);
+    }else if(life == 3){
+        life4->setVisible(false);
         life5->setVisible(false);
+        //life6->setVisible(false);
+    }else if(life == 4){
+        life5->setVisible(false);
+        life6->setVisible(false);
     }else if(life == 5) {
-        Sprite* life6 = (Sprite*)this->getChildByTag(kTagLife6);
         life6->setVisible(false);
     }
 }
@@ -404,7 +422,7 @@ void GameScene::collisionDetection()
 
                         log("%d",enemy->getPower());
                         auto reward_manager = RewardManager::getInstance();
-                        reward_manager->setLife(reward_manager->getLife()-1);
+                        reward_manager->setLife(reward_manager->getLife()-2);
                         player->hurt(enemy->getPower(), enemy->getSpecialEffect());
                         enemy->destroy();
                         
