@@ -309,9 +309,7 @@ void GameScene::createEnemy()
 
 void GameScene::dispLife()
 {
-    auto reward_manager = RewardManager::getInstance();
-
-    auto life = reward_manager->getLife();
+    auto life = RewardManager::getInstance()->getLife();
     
     log("Life is %d", life);
     if(life == 0 ){
@@ -355,7 +353,7 @@ void GameScene::collisionDetection()
                         log("SCREEN OUT LIFE DOWN BEFOR!!!!!!!!");
                         auto player = dynamic_cast<Player*>(targetNode);
   
-                        auto score = static_cast<LabelBMFont*>(getChildByTag(kTagLife));
+                        auto score = static_cast<LabelBMFont*>(getChildByTag(kTagScore));
                         score->setString(String::createWithFormat("%05d", RewardManager::getInstance()->getScore())->getCString());
                         
                         auto reward_manager = RewardManager::getInstance();

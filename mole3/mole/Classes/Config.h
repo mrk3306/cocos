@@ -13,7 +13,7 @@ enum kTag
     kTagEffect,
     kTagScore,
     kTagTime,
-    kTagLife = 3,
+    kTagLife,
     kTagLife1,
     kTagLife2,
     kTagLife3,
