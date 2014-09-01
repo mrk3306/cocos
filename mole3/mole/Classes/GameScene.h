@@ -35,7 +35,6 @@ private:
     
     void update(float delta);
     
-    void preLoad();
     void initialPlacement();
     void createPlayer();
     void createEnemy();
@@ -43,9 +42,13 @@ private:
     void collisionDetection();
     void updateInfomationPanel();
     void countdown(float delta);
-    void menuAction(Object *pSender);
+    void pushBack(Object *pSender);
+    void pushEnd(Object *pSender);
     void endFeverTime(float dt);
 
+    
+    
+    
     
 };
 #endif /* defined(__mole__GameScene__) */

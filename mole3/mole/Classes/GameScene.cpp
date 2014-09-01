@@ -1,5 +1,6 @@
 #include "GameScene.h"
-//#include "MenuScene.h"
+#include "TitleScene.h"
+#include "GameEndScene.h"
 
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -19,9 +20,10 @@ GameScene::~GameScene()
 
 Scene* GameScene::createScene()
 {
+
     auto scene = Scene::create();
-    scene->addChild(GameScene::create());
-    
+    auto layer = GameScene::create();
+    scene->addChild(layer);
     return scene;
 }
 
@@ -38,7 +40,6 @@ bool GameScene::init()
     
     RewardManager::getInstance()->setScore(0);
     
-    preLoad();
     initialPlacement();
     
     //SimpleAudioEngine::sharedEngine()->playBackgroundMusic(kBGMMain, true);
@@ -56,15 +57,6 @@ void GameScene::update(float delta)
     updateInfomationPanel();
 }
 
-void GameScene::preLoad()
-{
-    //SimpleAudioEngine::sharedEngine()->preloadEffect(kSEMoveBlock);
-    //SimpleAudioEngine::sharedEngine()->preloadEffect(kSERemoveBlock);
-    //SimpleAudioEngine::sharedEngine()->preloadBackgroundMusic(kBGMMain);
-    
-    // É{ÉXÇ»Ç«ÇÃëÂå^âÊëúÇ≈ÉQÅ[ÉÄé¿çsíÜÇ…ì«Ç›çûÇﬁÇ∆èàóùÇ™íxÇ≠Ç»ÇÈÇÊÇ§Ç»Ç‡ÇÃÇæÇØÇ‚ÇÍÇŒè[ï™
-    ResourceManager::getInstance()->preLoadBatchNode("enemy04.png");
-}
 
 void GameScene::initialPlacement()
 {
@@ -88,7 +80,7 @@ void GameScene::initialPlacement()
     auto backButton = MenuItemImage::create(
                                             "CloseNormal.png",  //表示
                                             "CloseSelected.png",  //タップ時の画像
-                                            CC_CALLBACK_1(GameScene::menuAction, this));
+                                            CC_CALLBACK_1(GameScene::pushBack, this));
     
     backButton->setPosition(Point(30, winSize.height * 0.95));
     auto _menu2 = Menu::create(backButton,NULL);
@@ -167,11 +159,10 @@ void GameScene::initialPlacement()
 }
 
 
-
-void GameScene::menuAction(Object *pSender)
+void GameScene::pushEnd(Object *pSender)
 {
     // 遷移先の画面のインスタンス
-    Scene *pScene = GameScene::createScene();
+    Scene *pScene = GameEndScene::createScene();
     
     // 0.5秒かけてフェードアウトしながら次の画面に遷移します
     //    引数１:フィードの時間
@@ -179,7 +170,24 @@ void GameScene::menuAction(Object *pSender)
     //    引数３：フィードの色（オプション）
     TransitionFade* transition = TransitionFade::create(0.5f, pScene);
     
-    Director::getInstance()->replaceScene(transition);
+    Director::getInstance()->pushScene(transition);
+    
+    
+}
+
+
+void GameScene::pushBack(Object *pSender)
+{
+    // 遷移先の画面のインスタンス
+    Scene *pScene = Title::createScene();
+    
+    // 0.5秒かけてフェードアウトしながら次の画面に遷移します
+    //    引数１:フィードの時間
+    //    引数２：移動先のシーン
+    //    引数３：フィードの色（オプション）
+    TransitionFade* transition = TransitionFade::create(0.5f, pScene);
+    
+    Director::getInstance()->pushScene(transition);
     
     
 }
@@ -287,7 +295,7 @@ void GameScene::createEnemy()
 
         }
 
-        else if (rand()%150 == 149)
+        else if (rand()%600 == 60)
         {
             //スター
             float enemy_width = winSize.width*(rand()%100+1)/100;
@@ -319,13 +327,22 @@ void GameScene::dispLife()
     Sprite* life6 = (Sprite*)this->getChildByTag(kTagLife6);
 
     
-    if(life == 0 ){
+    if(life <= 0 ){
         life1->setVisible(false);
         life2->setVisible(false);
         //life3->setVisible(false);
         //life4->setVisible(false);
         //life5->setVisible(false);
         //life6->setVisible(false);
+        
+        
+        // 遷移先の画面のインスタンス
+        //GameScene::init();
+        Scene *pScene = GameEndScene::createScene();
+        TransitionFade* transition = TransitionFade::create(0.5f, pScene);
+        
+        Director::getInstance()->pushScene(transition);
+        
         
     }else if(life == 1){
         life2->setVisible(false);
@@ -392,15 +409,13 @@ void GameScene::collisionDetection()
                     auto player = dynamic_cast<Player*>(targetNode);
                     if (currentNode->boundingBox().intersectsRect(targetNode->boundingBox()))
                     {
-                     //   if(player->playerStatus() == true){
-                        
+
                         auto reward_manager = RewardManager::getInstance();
                         reward_manager->setScore(reward_manager->getScore() + 50);
                         
                         player->hurt(enemy->getPower(), enemy->getSpecialEffect());
                         enemy->destroy();
                         
-                      //  }
                     }
                 }
             }
