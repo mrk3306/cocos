@@ -45,6 +45,7 @@ private:
     void pushBack(Object *pSender);
     void pushEnd(Object *pSender);
     void endFeverTime(float dt);
+    void reset();
 
     
     

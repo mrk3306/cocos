@@ -25,6 +25,6 @@ bool RewardManager::init()
 void RewardManager::reset()
 {
     setScore(0);
-    setTime(500);
-    setLife(6);
+    setTime(kTagTime);
+    setLife(kTagLife);
 }

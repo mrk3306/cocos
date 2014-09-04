@@ -52,10 +52,10 @@
 		50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF629517ECD46A001EB2F8 /* Icon-100.png */; };
 		50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF62A017ECD613001EB2F8 /* Icon-29.png */; };
 		50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF62A117ECD613001EB2F8 /* Icon-50.png */; };
-		56F54D61190F87B200FA687F /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 56F54D59190F87B200FA687F /* background.png */; };
 		56F54D62190F87B200FA687F /* se_slime.wav in Resources */ = {isa = PBXBuildFile; fileRef = 56F54D5A190F87B200FA687F /* se_slime.wav */; };
+		7225C1C519B6F178004B14CB /* btn_hover.png in Resources */ = {isa = PBXBuildFile; fileRef = 7225C1C319B6F178004B14CB /* btn_hover.png */; };
+		7225C1C619B6F178004B14CB /* btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 7225C1C419B6F178004B14CB /* btn.png */; };
 		7241413D19975C6E00354642 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7241413B19975C6E00354642 /* AppDelegate.cpp */; };
-		7241416019975DDA00354642 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7241413E19975DDA00354642 /* background.png */; };
 		7241416519975DDA00354642 /* burn_out.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7241414319975DDA00354642 /* burn_out.plist */; };
 		7241416619975DDA00354642 /* circle_fire.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7241414419975DDA00354642 /* circle_fire.plist */; };
 		7241416719975DDA00354642 /* circle_light.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7241414519975DDA00354642 /* circle_light.plist */; };
@@ -94,6 +94,8 @@
 		72B7A141199656290071AB52 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B7A13F199656290071AB52 /* left.png */; };
 		72B7A142199656290071AB52 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B7A140199656290071AB52 /* right.png */; };
 		72B7A1441996568F0071AB52 /* war_ship.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B7A1431996568F0071AB52 /* war_ship.png */; };
+		72CC986F19B44808003887FE /* TitleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72CC986D19B44808003887FE /* TitleScene.cpp */; };
+		72CC987419B45D87003887FE /* GameEndScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 72CC987219B45D87003887FE /* GameEndScene.cpp */; };
 		72CE709D199752AD0020F76C /* WarShip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 729059F91997464500E85837 /* WarShip.cpp */; };
 		72CE709E199752AD0020F76C /* WarShip.h in Sources */ = {isa = PBXBuildFile; fileRef = 729059FA1997464500E85837 /* WarShip.h */; };
 		72CE70A4199752AD0020F76C /* ArrowLeft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7290596F1997463B00E85837 /* ArrowLeft.cpp */; };
@@ -321,11 +323,11 @@
 		50EF629517ECD46A001EB2F8 /* Icon-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-100.png"; sourceTree = "<group>"; };
 		50EF62A017ECD613001EB2F8 /* Icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-29.png"; sourceTree = "<group>"; };
 		50EF62A117ECD613001EB2F8 /* Icon-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-50.png"; sourceTree = "<group>"; };
-		56F54D59190F87B200FA687F /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		56F54D5A190F87B200FA687F /* se_slime.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = se_slime.wav; sourceTree = "<group>"; };
+		7225C1C319B6F178004B14CB /* btn_hover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_hover.png; sourceTree = "<group>"; };
+		7225C1C419B6F178004B14CB /* btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn.png; sourceTree = "<group>"; };
 		7241413B19975C6E00354642 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = ../Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		7241413C19975C6E00354642 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../Classes/AppDelegate.h; sourceTree = "<group>"; };
-		7241413E19975DDA00354642 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		7241414319975DDA00354642 /* burn_out.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = burn_out.plist; sourceTree = "<group>"; };
 		7241414419975DDA00354642 /* circle_fire.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = circle_fire.plist; sourceTree = "<group>"; };
 		7241414519975DDA00354642 /* circle_light.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = circle_light.plist; sourceTree = "<group>"; };
@@ -360,7 +362,6 @@
 		724141A31997B67D00354642 /* LifeLeft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LifeLeft.h; path = ../Classes/LifeLeft.h; sourceTree = "<group>"; };
 		724141A41997B67D00354642 /* LifeRight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LifeRight.cpp; path = ../Classes/LifeRight.cpp; sourceTree = "<group>"; };
 		724141A51997B67D00354642 /* LifeRight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LifeRight.h; path = ../Classes/LifeRight.h; sourceTree = "<group>"; };
-		728B3D5619973395004FDF6E /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameScene.cpp; path = ../Classes/GameScene.cpp; sourceTree = "<group>"; };
 		7290596F1997463B00E85837 /* ArrowLeft.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ArrowLeft.cpp; path = ../Classes/ArrowLeft.cpp; sourceTree = "<group>"; };
 		729059701997463B00E85837 /* ArrowLeft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArrowLeft.h; path = ../Classes/ArrowLeft.h; sourceTree = "<group>"; };
 		729059711997463B00E85837 /* ArrowRight.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ArrowRight.cpp; path = ../Classes/ArrowRight.cpp; sourceTree = "<group>"; };
@@ -401,6 +402,10 @@
 		72B7A13F199656290071AB52 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
 		72B7A140199656290071AB52 /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
 		72B7A1431996568F0071AB52 /* war_ship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = war_ship.png; sourceTree = "<group>"; };
+		72CC986D19B44808003887FE /* TitleScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TitleScene.cpp; path = ../Classes/TitleScene.cpp; sourceTree = "<group>"; };
+		72CC986E19B44808003887FE /* TitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TitleScene.h; path = ../Classes/TitleScene.h; sourceTree = "<group>"; };
+		72CC987219B45D87003887FE /* GameEndScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameEndScene.cpp; path = ../Classes/GameEndScene.cpp; sourceTree = "<group>"; };
+		72CC987319B45D87003887FE /* GameEndScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameEndScene.h; path = ../Classes/GameEndScene.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -477,7 +482,11 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				72CC987219B45D87003887FE /* GameEndScene.cpp */,
+				72CC987319B45D87003887FE /* GameEndScene.h */,
 				7241413B19975C6E00354642 /* AppDelegate.cpp */,
+				72CC986D19B44808003887FE /* TitleScene.cpp */,
+				72CC986E19B44808003887FE /* TitleScene.h */,
 				7241413C19975C6E00354642 /* AppDelegate.h */,
 				7290596F1997463B00E85837 /* ArrowLeft.cpp */,
 				729059701997463B00E85837 /* ArrowLeft.h */,
@@ -528,7 +537,6 @@
 				7241418E1997B3B900354642 /* Star.h */,
 				729059F91997464500E85837 /* WarShip.cpp */,
 				729059FA1997464500E85837 /* WarShip.h */,
-				728B3D5619973395004FDF6E /* GameScene.cpp */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -659,11 +667,12 @@
 				724141981997B56B00354642 /* enemy06.png */,
 				724141961997B50600354642 /* star.png */,
 				724141941997B50000354642 /* bomb.png */,
-				7241413E19975DDA00354642 /* background.png */,
 				7241414319975DDA00354642 /* burn_out.plist */,
 				7241414419975DDA00354642 /* circle_fire.plist */,
 				7241414519975DDA00354642 /* circle_light.plist */,
 				7241414619975DDA00354642 /* CloseNormal.png */,
+				7225C1C319B6F178004B14CB /* btn_hover.png */,
+				7225C1C419B6F178004B14CB /* btn.png */,
 				7241414719975DDA00354642 /* CloseSelected.png */,
 				7241414819975DDA00354642 /* enemy01.png */,
 				7241414A19975DDA00354642 /* enemy03.png */,
@@ -676,7 +685,6 @@
 				7241415E19975DDA00354642 /* whiteFont.fnt */,
 				7241415F19975DDA00354642 /* whiteFont.png */,
 				72B7A1431996568F0071AB52 /* war_ship.png */,
-				56F54D59190F87B200FA687F /* background.png */,
 				72B7A13F199656290071AB52 /* left.png */,
 				72B7A140199656290071AB52 /* right.png */,
 				56F54D5A190F87B200FA687F /* se_slime.wav */,
@@ -851,11 +859,12 @@
 				7241416719975DDA00354642 /* circle_light.plist in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				7241417119975DDA00354642 /* lizi.plist in Resources */,
+				7225C1C519B6F178004B14CB /* btn_hover.png in Resources */,
 				7241417C19975DDA00354642 /* war_ship.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				7241418019975DDA00354642 /* whiteFont.png in Resources */,
 				7241419E1997B5B500354642 /* heart.png in Resources */,
-				56F54D61190F87B200FA687F /* background.png in Resources */,
+				7225C1C619B6F178004B14CB /* btn.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				7241416919975DDA00354642 /* CloseSelected.png in Resources */,
 				7241416519975DDA00354642 /* burn_out.plist in Resources */,
@@ -863,7 +872,6 @@
 				7241416E19975DDA00354642 /* Marker Felt.ttf in Resources */,
 				7241417219975DDA00354642 /* right.png in Resources */,
 				72B7A1441996568F0071AB52 /* war_ship.png in Resources */,
-				7241416019975DDA00354642 /* background.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				7241417019975DDA00354642 /* left.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
@@ -909,6 +917,7 @@
 				724141A81997B6AF00354642 /* LifeLeft.h in Sources */,
 				724141A91997B6AF00354642 /* LifeRight.h in Sources */,
 				724141901997B3D100354642 /* Star.h in Sources */,
+				72CC987419B45D87003887FE /* GameEndScene.cpp in Sources */,
 				724141911997B3D100354642 /* Enemy05.h in Sources */,
 				724141921997B3D100354642 /* Enemy06.h in Sources */,
 				724141931997B3D100354642 /* Enemy08.h in Sources */,
@@ -953,6 +962,7 @@
 				72CE70E0199752AE0020F76C /* PlayerClassLoader.h in Sources */,
 				72CE70E1199752AE0020F76C /* ResourceManager.cpp in Sources */,
 				72CE70E2199752AE0020F76C /* ResourceManager.h in Sources */,
+				72CC986F19B44808003887FE /* TitleScene.cpp in Sources */,
 				72CE70E3199752AE0020F76C /* RewardManager.cpp in Sources */,
 				72CE70E4199752AE0020F76C /* RewardManager.h in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,

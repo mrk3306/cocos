@@ -4,8 +4,8 @@ USING_NS_CC;
 
 Enemy08::Enemy08()
 {
-    score = 10;
-   setTag(kTagLife);
+    setTag(kTagLife);
+    score = 50;
 }
 
 Enemy08::~Enemy08()
@@ -24,7 +24,9 @@ void Enemy08::move()
     
 	runAction(Sequence::create(action, actionCompleted, nullptr));
 }
+
 void Enemy08::destroy()
 {
+    
     Enemy::destroy();
 }

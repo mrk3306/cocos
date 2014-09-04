@@ -68,15 +68,6 @@ bool Title::init(){
 
 void Title::pushStart(Object *pSender)
 {
-
-    // 遷移先の画面のインスタンス
-    //Scene *pScene = GameScene::createScene();
-    
-    // 0.5秒かけてフェードアウトしながら次の画面に遷移します
-    //    引数１:フィードの時間
-    //    引数２：移動先のシーン
-    //    引数３：フィードの色（オプション）
-    //TransitionFade* transition = TransitionFade::create(0.5f, pScene);
     
     //遷移実行  遷移時のアニメーション　http://study-cocos2d-x.info/scenelayer/55/
     Director::getInstance()->replaceScene(GameScene::createScene());

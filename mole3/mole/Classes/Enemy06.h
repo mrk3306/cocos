@@ -1,5 +1,5 @@
-#ifndef __shooting2__Enemy06__
-#define __shooting2__Enemy06__
+#ifndef __mole__Enemy06__
+#define __mole__Enemy06__
 
 #include "cocos2d.h"
 #include "Config.h"
@@ -21,4 +21,4 @@ protected:
     virtual const char* getImageFileName() override;
 };
 
-#endif /* defined(__shooting2__Enemy06__) */
+#endif /* defined(__mole__Enemy06__) */

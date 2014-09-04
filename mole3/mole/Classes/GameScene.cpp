@@ -29,21 +29,17 @@ Scene* GameScene::createScene()
 
 bool GameScene::init()
 {
+
     if(!Layer::init())
     {
         return false;
     }
-    
     //背景色設定
     LayerColor * pWhite = LayerColor::create(Color4B::WHITE);
     this->addChild(pWhite);
     
     RewardManager::getInstance()->setScore(0);
-    
     initialPlacement();
-    
-    //SimpleAudioEngine::sharedEngine()->playBackgroundMusic(kBGMMain, true);
-    
     scheduleUpdate();
     
     return true;
@@ -60,21 +56,12 @@ void GameScene::update(float delta)
 
 void GameScene::initialPlacement()
 {
-    //    auto bg1 = Sprite::create("bg1.png");
-    //    auto bg2 = Sprite::create("bg2.png");
-    //    auto bg3 = Sprite::create("bg3.png");
-    //    auto paraNode = ParallaxNode::create();
-    //    paraNode->addChild(bg1, 1, Point(0.5f, 0), Point(0, winSize.height));
-    //    paraNode->addChild(bg2, 2, Point(1.5f, 0), Point(0, winSize.height / 10));
-    //    paraNode->addChild(bg3, 3, Point(2.0f, 0), Point(0, winSize.height / 3));
-    //    paraNode->setPosition(Point(winSize.width, winSize.height / 5));
-    //    addChild(paraNode, kZOrderBackground);
-    //
-    //    auto move1  = MoveBy::create(10.0f, Point(-winSize.width, 0));
-    //    auto move2  = MoveBy::create(0.0f, Point(winSize.width, 0));
-    //    auto repeat = RepeatForever::create(Sequence::create(move1, move2, nullptr));
-    //    paraNode->runAction(repeat);
     
+    //ライフを初期化
+    auto reward_manager = RewardManager::getInstance();
+    reward_manager->setLife(kTagLife);
+    reward_manager->setTime(kTagTime);
+
     
     // 画像1つ目、2つ目ホhover
     auto backButton = MenuItemImage::create(
@@ -128,10 +115,8 @@ void GameScene::initialPlacement()
     heart06->setPosition(Point(winSize.width * 0.43, winSize.height * 0.85));
     addChild(heart06, kZOrderLabel, kTagLife6);
     
-    
     //プレイヤー
     createPlayer();
-    
     
     auto left = ArrowLeft::createOperationPanel(warShip);
     left->setPosition(Point((winSize.width / 2) - left->getContentSize().width, left->getContentSize().height));
@@ -141,21 +126,6 @@ void GameScene::initialPlacement()
     right->setPosition(Point((winSize.width / 2) + right->getContentSize().width , right->getContentSize().height));
     addChild(right, right->getZOrder(), right->getTag());
     
-    //auto top = ArrowTop::createOperationPanel(warShip);
-    //top->setPosition(Point(top->getContentSize().width * 2.0f, top->getContentSize().height * 2));
-    //addChild(top, top->getZOrder(), top->getTag());
-    
-    //auto under = ArrowUnder::createOperationPanel(warShip);
-    //under->setPosition(Point(under->getContentSize().width * 2.0f, under->getContentSize().height));
-    //addChild(under, under->getZOrder(), under->getTag());
-    
-    //auto attack = NormalAttack::createOperationPanel(warShip);
-    //attack->setPosition(Point(winSize.width * 0.8f, attack->getContentSize().height * 2));
-    //addChild(attack, attack->getZOrder(), attack->getTag());
-    
-    //auto special = SpecialAttack::createOperationPanel(warShip);
-    //special->setPosition(Point(winSize.width*0.8f + special->getContentSize().width, special->getContentSize().height * 2));
-    //addChild(special, special->getZOrder(), special->getTag());
 }
 
 
@@ -163,11 +133,6 @@ void GameScene::pushEnd(Object *pSender)
 {
     // 遷移先の画面のインスタンス
     Scene *pScene = GameEndScene::createScene();
-    
-    // 0.5秒かけてフェードアウトしながら次の画面に遷移します
-    //    引数１:フィードの時間
-    //    引数２：移動先のシーン
-    //    引数３：フィードの色（オプション）
     TransitionFade* transition = TransitionFade::create(0.5f, pScene);
     
     Director::getInstance()->pushScene(transition);
@@ -180,11 +145,6 @@ void GameScene::pushBack(Object *pSender)
 {
     // 遷移先の画面のインスタンス
     Scene *pScene = Title::createScene();
-    
-    // 0.5秒かけてフェードアウトしながら次の画面に遷移します
-    //    引数１:フィードの時間
-    //    引数２：移動先のシーン
-    //    引数３：フィードの色（オプション）
     TransitionFade* transition = TransitionFade::create(0.5f, pScene);
     
     Director::getInstance()->pushScene(transition);
@@ -236,7 +196,7 @@ void GameScene::createEnemy()
         }
         
     } else {
-        
+
         if (rand()%150 == 10)
         {
 
@@ -278,23 +238,22 @@ void GameScene::createEnemy()
             auto enemy = Enemy05::createEnemy(warShip);
             enemy->setPosition(enemy_width, winSize.height);
             addChild(enemy, enemy->getZOrder(), enemy->getTag());
-            enemy->move();
+            //enemy->move();
 
         }
-        else if (rand()%150 == 50)
+        else if (rand()%150 == 40)
         {
             
             //ライフ
+            log("ライフライフライフライフライフ");
             float enemy_width = winSize.width*(rand()%100+1)/100;
             enemy_width = winSize.height * 0.8;
-            
             auto enemy = Enemy08::createEnemy(warShip);
             enemy->setPosition(enemy_width, winSize.height);
             addChild(enemy, enemy->getZOrder(), enemy->getTag());
             enemy->move();
 
         }
-
         else if (rand()%600 == 60)
         {
             //スター
@@ -307,7 +266,7 @@ void GameScene::createEnemy()
             auto star = Star::createEnemy(warShip);
             star->setPosition(enemy_width, winSize.height);
             addChild(star, star->getZOrder(), star->getTag());
-            star->move();
+            //star->move();
 
         }
     }
@@ -320,52 +279,58 @@ void GameScene::dispLife()
     log("Life is %d", life);
     
     Sprite* life1 = (Sprite*)this->getChildByTag(kTagLife1);
+    life1->setOpacity(0);
     Sprite* life2 = (Sprite*)this->getChildByTag(kTagLife2);
+    life2->setOpacity(0);
     Sprite* life3 = (Sprite*)this->getChildByTag(kTagLife3);
+    life3->setOpacity(0);
     Sprite* life4 = (Sprite*)this->getChildByTag(kTagLife4);
+    life4->setOpacity(0);
     Sprite* life5 = (Sprite*)this->getChildByTag(kTagLife5);
+    life5->setOpacity(0);
     Sprite* life6 = (Sprite*)this->getChildByTag(kTagLife6);
-
+    life6->setOpacity(0);
     
     if(life <= 0 ){
-        life1->setVisible(false);
-        life2->setVisible(false);
-        //life3->setVisible(false);
-        //life4->setVisible(false);
-        //life5->setVisible(false);
-        //life6->setVisible(false);
-        
-        
+
         // 遷移先の画面のインスタンス
-        //GameScene::init();
-        Scene *pScene = GameEndScene::createScene();
-        TransitionFade* transition = TransitionFade::create(0.5f, pScene);
-        
-        Director::getInstance()->pushScene(transition);
-        
+        //Director::getInstance()->pushScene(GameEndScene::createScene());
+
         
     }else if(life == 1){
-        life2->setVisible(false);
-        life3->setVisible(false);
-        //life4->setVisible(false);
-        //life5->setVisible(false);
-        //life6->setVisible(false);
+        life1->setOpacity(225);
         
     }else if(life == 2){
-        life3->setVisible(false);
-        life4->setVisible(false);
-        //life5->setVisible(false);
-        //life6->setVisible(false);
+        life1->setOpacity(225);
+        life2->setOpacity(225);
+        
     }else if(life == 3){
-        life4->setVisible(false);
-        life5->setVisible(false);
-        //life6->setVisible(false);
+        life1->setOpacity(225);
+        life2->setOpacity(225);
+        life3->setOpacity(225);
+
     }else if(life == 4){
-        life5->setVisible(false);
-        life6->setVisible(false);
+        life1->setOpacity(225);
+        life2->setOpacity(225);
+        life3->setOpacity(225);
+        life4->setOpacity(225);
+
     }else if(life == 5) {
-        life6->setVisible(false);
+        life1->setOpacity(225);
+        life2->setOpacity(225);
+        life3->setOpacity(225);
+        life4->setOpacity(225);
+        life5->setOpacity(225);
+
+    }else{
+        life1->setOpacity(225);
+        life2->setOpacity(225);
+        life3->setOpacity(225);
+        life4->setOpacity(225);
+        life5->setOpacity(225);
+        life6->setOpacity(225);
     }
+
 }
 
 void GameScene::collisionDetection()
@@ -392,9 +357,10 @@ void GameScene::collisionDetection()
                         score->setString(String::createWithFormat("%05d", RewardManager::getInstance()->getScore())->getCString());
                         
                         auto reward_manager = RewardManager::getInstance();
-                        reward_manager->setLife(reward_manager->getLife()-1);
-  
-                    
+                        if(reward_manager->getLife() >  0){
+                            reward_manager->setLife(reward_manager->getLife()-1);
+                        }
+                        
                         enemy->destroy();
                         //log("SCREEN OUT LIFE DOWN AFTER %d",reward_manager->getLife());
 
@@ -437,7 +403,11 @@ void GameScene::collisionDetection()
 
                         log("%d",enemy->getPower());
                         auto reward_manager = RewardManager::getInstance();
-                        reward_manager->setLife(reward_manager->getLife()-2);
+
+                        if(reward_manager->getLife() >  0){
+                            reward_manager->setLife(reward_manager->getLife()-1);
+                        }
+                        
                         player->hurt(enemy->getPower(), enemy->getSpecialEffect());
                         enemy->destroy();
                         
@@ -460,13 +430,14 @@ void GameScene::collisionDetection()
                     if (currentNode->boundingBox().intersectsRect(targetNode->boundingBox()))
                     {
                         
+                        log("%d",enemy->getPower());
+                        auto reward_manager = RewardManager::getInstance();
                         
-                        //if(player->playerStatus() == true){
-                            
-                            //player->hurt(enemy->getPower(), enemy->getSpecialEffect());
-                            ///enemy->destroy();
-                            
-                        //}
+                        if(reward_manager->getLife() >  kTagLife){
+                             reward_manager->setLife(reward_manager->getLife()+1);
+                        }
+                        player->hurt(enemy->getPower(), enemy->getSpecialEffect());
+                        enemy->destroy();
                         
                     }
                 }
@@ -507,5 +478,12 @@ void GameScene::updateInfomationPanel()
     
     auto time = static_cast<LabelBMFont*>(getChildByTag(kTagTime));
     time->setString(String::createWithFormat("%05d", RewardManager::getInstance()->getTime())->getCString());
+    
+}
+
+void GameScene::reset()
+{
+    
+
     
 }

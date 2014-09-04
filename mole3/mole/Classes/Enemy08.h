@@ -1,5 +1,5 @@
-#ifndef __shooting2__Enemy08__
-#define __shooting2__Enemy08__
+#ifndef __mole__Enemy08__
+#define __mole__Enemy08__
 
 #include "cocos2d.h"
 #include "Config.h"
@@ -10,15 +10,15 @@ USING_NS_CC;
 
 class Enemy08 : public Enemy, public EnemyCreator<Enemy08>
 {
-public:    
+public:
     Enemy08();
     virtual ~Enemy08();
-
+    
     virtual void move() override;
     virtual void destroy() override;
-
+    
 protected:
     virtual const char* getImageFileName() override;
 };
 
-#endif /* defined(__shooting2__Enemy08__) */
+#endif /* defined(__mole__Enemy08__) */

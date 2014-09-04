@@ -12,8 +12,7 @@ enum kTag
 	kTagAlly,
     kTagEffect,
     kTagScore,
-    kTagTime,
-    kTagLife,
+    kTagLife = 6,
     kTagLife1,
     kTagLife2,
     kTagLife3,
@@ -22,6 +21,7 @@ enum kTag
     kTagLife6,
 	kTagBomb,
 	kTagStar,
+    kTagTime = 500,
 };
 
 enum kZOrder

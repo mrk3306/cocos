@@ -4,8 +4,8 @@ USING_NS_CC;
 
 Enemy06::Enemy06()
 {
-    score = 10;
     setTag(kTagEnemy);
+    score = 50;
 }
 
 Enemy06::~Enemy06()
@@ -27,5 +27,6 @@ void Enemy06::move()
 
 void Enemy06::destroy()
 {
+    
     Enemy::destroy();
 }
